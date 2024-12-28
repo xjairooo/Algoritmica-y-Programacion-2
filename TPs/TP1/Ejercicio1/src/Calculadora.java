@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
 /**
  * 1. Escribir un programa que lee dos números e imprima la suma, producto,
  * diferencia y cociente de los números.
  */
-
+import java.util.Scanner;
 public class Calculadora {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
