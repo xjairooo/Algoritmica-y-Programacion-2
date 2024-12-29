@@ -43,7 +43,7 @@ El repositorio está organizado de la siguiente manera:
 
 1. Clona el repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/xjairooo/algoritmica-programacion-2.git
+   git clone https://github.com/xjairooo/Algoritmica-y-Programacion-2.git
 2. Navega a las carpetas de los trabajos prácticos o recursos que te interesen.
 3. Compila y ejecuta los ejemplos si lo deseas. Puedes usar IntelliJ IDEA, Eclipse o cualquier IDE que prefieras para Java.
 
