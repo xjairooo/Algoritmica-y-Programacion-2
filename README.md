@@ -64,7 +64,8 @@ Si deseas contribuir con tus propios trabajos prácticos o recursos, ¡eres bien
 
 **Jairo Campero**  
 Estudiante de Algorítmica y Programación 2  
-[camperojairo0@gmail.com](mailto:camperojairo0@gmail.com)
+**Correo📩:** [camperojairo0@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=camperojairo0@gmail.com)
+
 
 
 
