@@ -5,10 +5,9 @@
 
 import java.util.Scanner;
 
-public class Main {
+public class MayorMenor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
@@ -19,9 +18,7 @@ public class Main {
             max = (num > max) ? num : max;
             min = (num < min) ? num : min;
         }
-
         System.out.println("Número más grande: " + max);
         System.out.println("Número más pequeño: " + min);
     }
-
 }
