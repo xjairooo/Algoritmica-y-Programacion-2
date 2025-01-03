@@ -8,9 +8,14 @@ import java.util.Scanner;
 public class ValorMinimo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce un numero: ");
+
+        // Solicita al usuario la cantidad de numeros a comparar
+        System.out.println("Introduce la cantidad de numeros a introducir: ");
         int numeroRepeticiones = scanner.nextInt();
+
         int min = Integer.MAX_VALUE;
+
+        //Compara y actualiza el menor
         for (int i = 0; i < numeroRepeticiones; i++) {
             System.out.println("Ingrese un numero: ");
             int num = scanner.nextInt();
