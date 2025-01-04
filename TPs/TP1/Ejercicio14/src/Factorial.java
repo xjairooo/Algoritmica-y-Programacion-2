@@ -1,3 +1,8 @@
+/**
+ * 14. Escribir el metodo factorial y un programa que lee un entero n no negativo
+ * y calcula su factorial del mismo.
+ */
+
 import java.util.Scanner;
 
 public class Factorial {

@@ -1,3 +1,8 @@
+/**
+ * 15. Escribir un programa que calcula el valor de e a partir de la serie infinita:
+ * e = 1 + 1/1! + 1/2! + 1/3! + …
+ */
+
 import java.util.Scanner;
 
 public class CalcularE {
