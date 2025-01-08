@@ -34,40 +34,40 @@ public class Calculadora {
 ### Explicación del Código:
 **1. Importación de la clase Scanner:** El código importa la clase Scanner del paquete java.util, la cual permite la entrada de datos por parte del usuario desde la consola.
 
-java
-Copiar código
+```java
 import java.util.Scanner;
-Creación del objeto Scanner:
+```
+**2. Creación del objeto Scanner:**
 El programa utiliza el objeto scanner para capturar los valores ingresados por el usuario. Cada vez que se usa scanner.nextInt(), se espera que el usuario ingrese un número entero.
 
-java
-Copiar código
+```java
 Scanner scanner = new Scanner(System.in);
-Operaciones Aritméticas:
+```
+**3. Operaciones Aritméticas:**
 
-Suma: Se suman los dos números ingresados.
-java
-Copiar código
+➕ **Suma:** Se suman los dos números ingresados.
+```java
 System.out.println("Suma: " + (num1 + num2));
-Producto: Se multiplican los dos números.
-java
-Copiar código
+```
+✖ **Producto:** Se multiplican los dos números.
+``` java
 System.out.println("Producto: " + (num1 * num2));
-Diferencia: Se resta el segundo número del primero.
-java
-Copiar código
+```
+➖ **Diferencia:** Se resta el segundo número del primero.
+```java
 System.out.println("Diferencia: " + (num1 - num2));
-Cociente: Se divide el primer número entre el segundo. Nota importante: Aquí se asume que el segundo número no es 0.
-java
-Copiar código
+```
+➗ **Cociente:** Se divide el primer número entre el segundo. Nota importante: Aquí se asume que el segundo número no es 0.
+```java
 System.out.println("Cociente: " + (num1 / num2));
-Posibles Mejoras:
+```
+### Posibles Mejoras:
 
 Validar que el segundo número no sea cero antes de realizar la división, ya que la división por cero lanzará una excepción (ArithmeticException).
-java
-Copiar código
+```java
 if (num2 != 0) {
 System.out.println("Cociente: " + (num1 / num2));
 } else {
 System.out.println("Error: División por cero.");
 }
+```
