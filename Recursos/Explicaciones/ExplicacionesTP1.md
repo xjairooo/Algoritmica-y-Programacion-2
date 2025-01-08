@@ -1,6 +1,6 @@
-# Explicación de Ejercicios de Algorítmica y Programación 2 📝
+# Explicación de Ejercicios TP1 de Algorítmica y Programación 2 📝
 
-Este archivo contiene las explicaciones de los ejercicios realizados en la materia **Algorítmica y Programación 2**.
+Este archivo contiene las explicaciones de los ejercicios realizados del TP1 de **Algorítmica y Programación 2**.
 
 ## Ejercicio 1: Cálculo de la Hipotenusa 📐
 
