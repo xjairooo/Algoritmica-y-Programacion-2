@@ -71,3 +71,7 @@ System.out.println("Cociente: " + (num1 / num2));
 System.out.println("Error: División por cero.");
 }
 ```
+### Recursos utiles
+- [Documentación de la clase Scanner en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
+- [Operadores aritméticos en Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html)
+- [Cómo manejar excepciones en Java](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
