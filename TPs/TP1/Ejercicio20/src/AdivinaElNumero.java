@@ -44,5 +44,6 @@ public class AdivinaElNumero {
         System.out.print("¿Deseas jugar de nuevo? (sí/no): ");
         String respuesta = scanner.next().toLowerCase();
         return respuesta.equals("sí") || respuesta.equals("si");
+
     }
 }
