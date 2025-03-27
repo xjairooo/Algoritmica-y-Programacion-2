@@ -4,16 +4,21 @@ import java.util.Arrays;
 
 public class ConjuntoEntero {
 
+	
+	//final = significa q esa constate no va a cambiar
 	private static final int MAX = 101;
-	private boolean conjunto[];
+	
+	// Declara un array boolean 
+	private boolean conjunto[];	
 
+	// Inicializa el arreglo boolean
 	public ConjuntoEntero() {
 		conjunto = new boolean[MAX];
 	}
 
 	// Implementar
 	public void insertarElemento(int i) {
-		
+		conjunto[i] = true;
 	}
 
 	// Implementar
@@ -38,6 +43,10 @@ public class ConjuntoEntero {
 
 	// Implementar
 	public String toString() {
+		String s = "";
+		for (int i = 0; i < MAX;i++)
+			if (conjunto[i])
+			s+= i + " ";
 		return null;
 	}
 

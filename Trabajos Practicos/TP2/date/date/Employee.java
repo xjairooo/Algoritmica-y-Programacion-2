@@ -1,6 +1,8 @@
 // Fig. 8.8: Employee.java
 // Employee class with references to other objects.
 
+import java.sql.Date;
+
 public class Employee 
 {
    private String firstName;

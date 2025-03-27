@@ -21,8 +21,8 @@ public class PruebaConjunto {
 
 		System.out.println("Conjunto 1: " + c1);
 		System.out.println("Conjunto 2: " + c2);
-		System.out.println("Unión: " + c1.union(c2));
-		System.out.println("Intersección: " + c1.interseccion(c2));
+		System.out.println("Uniï¿½n: " + c1.union(c2));
+		System.out.println("Intersecciï¿½n: " + c1.interseccion(c2));
 		System.out.println("Diferencia: " + c1.diferencia(c2));
 		System.out.println("Son iguales: " + c1.equals(c2));
 		
