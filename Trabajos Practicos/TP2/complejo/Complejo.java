@@ -1,3 +1,5 @@
+package complejo;
+
 public class Complejo {
 
     // Variables privadas que solo se puede acceder dentro de la clase Complejo
@@ -74,7 +76,7 @@ public class Complejo {
      * @param otro El divisor (numero complejo)
      * @return Nuevo numero complejo resultado de la division
      */
-    public Complejo divisor(Complejo otro) {
+    public Complejo dividir(Complejo otro) {
         double denominador = Math.pow(otro.real, 2) + Math.pow(otro.imaginario, 2);
         double nuevoReal = ((this.real * otro.real) + (this.imaginario * otro.imaginario)) / denominador;
         double nuevoImaginario = ((this.imaginario * otro.real) - (this.real * otro.imaginario)) / denominador;
@@ -87,7 +89,7 @@ public class Complejo {
      * @param escalar El divisor (numero real)
      * @return Nuevo numero complejo resultado de la division
      */
-    public Complejo disionEscalar(double escalar) {
+    public Complejo divisionEscalar(double escalar) {
         return new Complejo(this.real / escalar, this.imaginario / escalar);
     }
 
