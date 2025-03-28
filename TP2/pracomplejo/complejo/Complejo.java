@@ -5,17 +5,19 @@ public class Complejo {
     private double imag;
 
     // Constructor por defecto de la clase
+    // Alpedo
     public Complejo() {
 
     }
 
-    // Constructor con par�metros
+    // Inicializa el constructor con parametros
     public Complejo(double real, double imag) {
         this.real = real;
         this.imag = imag;
     }
 
-    // m�todos setters y getters
+    // setters no sirve en este caso porque no se modifican los valores
+    // metodos setters y getters
     public double getImag() {
         return imag;
     }
@@ -28,13 +30,15 @@ public class Complejo {
         return real;
     }
 
+    // no sirve porque no modificamos el atributo
     public void setReal(double real) {
         this.real = real;
     }
 
-    // sumar dos n�meros complejos
+    // sumar dos numeros complejos
     // (a, b) + (c, d) = (a + c, b + d);
     public Complejo sumar(Complejo c) {
+        //
         Complejo aux = new Complejo();
         aux.real = real + c.real;
         aux.imag = imag + c.imag;
@@ -101,4 +105,5 @@ public class Complejo {
         }
         return true;
     }
+
 } // Fin de la Clase Complejo Java

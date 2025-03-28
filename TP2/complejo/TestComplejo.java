@@ -1,5 +1,6 @@
 package complejo;
 
+//REVISAR CODIGO --> Se compila con el otro codigo
 public class TestComplejo {
     public static void main(String[] args) {
 
@@ -19,8 +20,8 @@ public class TestComplejo {
         System.out.println("\nOperaciones basicas");
         pruebaOperacionesBasicas(c1, c2, c3);
 
-        System.out.println();
-        pruebaDivisionEscalar(c1, c2, 2.5);
+        // System.out.println();
+        // pruebaDivisionEscalar(c1, c2, 2.5);
 
     }
 
@@ -74,9 +75,12 @@ public class TestComplejo {
      * @param c2      Segundo numero complejo para prueba
      * @param escalar Valor escalar para la division
      */
-    private static void pruebaDivisionEscalar(Complejo c1, Complejo c2, double escalar) {
-        System.out.println("Division escalar por " + escalar + ":");
-        System.out.println(c1 + " / " + escalar + " = " + c1.divisionEscalar(escalar));
-        System.out.println(c2 + " / " + escalar + " = " + c2.divisionEscalar(escalar));
-    }
+    // private static void pruebaDivisionEscalar(Complejo c1, Complejo c2, double
+    // escalar) { // Cambia int por double
+    // System.out.println("Division escalar por " + escalar + ":");
+    // System.out.println(c1 + " / " + escalar + " = " +
+    // c1.dividirEscalar(escalar));
+    // System.out.println(c2 + " / " + escalar + " = " +
+    // c2.dividirEscalar(escalar));
+    // }
 }

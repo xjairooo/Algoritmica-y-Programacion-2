@@ -37,6 +37,7 @@ public class Complejo {
 
     /**
      * Suma este numero complejo con otro
+     * (a,b) +(c,d) = (a + c, b +d)
      * 
      * @param otro El otro numero complejo a sumar
      * @return Nuevo numero complejo resultado de la suma
@@ -89,7 +90,8 @@ public class Complejo {
      * @param escalar El divisor (numero real)
      * @return Nuevo numero complejo resultado de la division
      */
-    public Complejo divisionEscalar(double escalar) {
+
+    public Complejo dividirEscalar(double escalar) {
         return new Complejo(this.real / escalar, this.imaginario / escalar);
     }
 
