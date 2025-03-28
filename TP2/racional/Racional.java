@@ -3,15 +3,20 @@ package racional;
 // Clase Racional
 public class Racional {
 
-	// Atributos
+	// a) variables enteras para representar datos privados
+
 	private int numerador;
 	private int denominador;
 
-	// Constructor
+	// b) Inicializa el Constructor para el objeto
 	public Racional(int numerador, int denominador) {
 		this.numerador = numerador;
 
-		if (denominador == 0)
+		if (denominador == 0) // si el denominador que ingreso el usuario es 0 -> le salta un error
+			// throw = lanza explÃ­citamente una excepciÃ³n (error), el programa se detiene
+			// inmediato
+			// new IllegalArgumentException = Crea un nuevo objeto de tipo
+			// IllegalArgumentException("...mensaje...")
 			throw new IllegalArgumentException("El denominador debe ser distinto de cero");
 		this.denominador = denominador;
 	}
@@ -30,25 +35,49 @@ public class Racional {
 		return denominador;
 	}
 
+	// Si el valor q modificamos del denominador es != 0 va lanzar error
 	public void setDenominador(int denominador) {
 		if (denominador == 0)
 			throw new IllegalArgumentException("El denominador debe ser distinto de cero");
 		this.denominador = denominador;
 	}
 
-	// Métodos
-	public Racional sumar(Racional b) {
-		int n = (numerador * b.denominador) + (b.numerador * denominador);
-		int d = denominador * b.denominador;
-		return new Racional(n, d);
+	// Metodos
+
+	/**
+	 * Suma de dos racionales
+	 * Formula: a/b + c/d = (a*d + c*b) / (b*d)
+	 * 
+	 * @param otro
+	 * @return la suma de los racionales
+	 */
+	public Racional sumar(Racional otro) {
+		int nuevoNumerador = (numerador * otro.denominador) + (otro.numerador * denominador);
+		int nuevoDenominador = denominador * otro.denominador;
+		return new Racional(nuevoNumerador, nuevoDenominador);
+	}
+
+	/**
+	 * Resta dos nÃºmeros racionales.
+	 * FÃ³rmula: a/b - c/d = (a*d - c*b) / (b*d)
+	 * 
+	 * @param otro
+	 * @return
+	 */
+	public Racional restar(Racional otro) {
+		int nuevoNumerador = (this.numerador * otro.denominador) - (otro.numerador * this.denominador);
+		int nuevoDenominador = this.denominador * otro.denominador;
+		return new Racional(nuevoNumerador, nuevoDenominador);
 	}
 
 	// Implementar...
-	public Racional restar(Racional b) {
-		return new Racional(1, 1);
-	}
-
-	// Implementar...
+	/**
+	 * Multiplica dos nÃºmeros racionales.
+	 * FÃ³rmula: (a/b) * (c/d) = (a*c) / (b*d)
+	 * 
+	 * @param b
+	 * @return
+	 */
 	public Racional multiplicar(Racional b) {
 		return new Racional(1, 1);
 	}
@@ -65,7 +94,7 @@ public class Racional {
 		return new Racional(1, 1);
 	}
 
-	// Método estático
+	// Mï¿½todo estï¿½tico
 	public static Racional simplificar(Racional a) {
 		int x = mcd(Math.abs(a.numerador), Math.abs(a.denominador));
 		int n = a.numerador / x;
@@ -85,7 +114,7 @@ public class Racional {
 		return ((r1.numerador == r2.numerador) && (r1.denominador == r2.denominador));
 	}
 
-	// Método privado
+	// Mï¿½todo privado
 	private static int mcd(int m, int n) {
 		int t;
 		while (m > 0) {
