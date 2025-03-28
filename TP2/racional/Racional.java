@@ -150,15 +150,34 @@ public class Racional {
 		return new Racional(nuevoNumerador, nuevoDenominador);
 	}
 
-	// toString: mostrar un objeto
+	/**
+	 * Representación en String del número racional
+	 * 
+	 * @return String con formato:
+	 *         - "numerador/denominador" (forma básica)
+	 *         - Si el denominador es 1: muestra solo el numerador (ej: "5" en lugar
+	 *         de "5/1")
+	 *         - Números negativos: el signo siempre en el numerador (ej: "-1/2" en
+	 *         lugar de "1/-2")
+	 */
+	@Override
 	public String toString() {
-		return (numerador + "/" + denominador);
+		// Simplificamos la fracción primero para una representación más limpia
+		Racional simplificado = simplificar(this);
+
+		// Caso especial: cuando el denominador es 1, mostrar solo el numerador
+		if (simplificado.denominador == 1) {
+			return String.valueOf(simplificado.numerador);
+		}
+
+		// Formato estándar: "numerador/denominador"
+		return simplificado.numerador + "/" + simplificado.denominador;
 	}
 
 	// equals: verificar cuando dos objetos son iguales
-	public boolean equals(Object o) {
+	public boolean equals(Object o) { // Object o???
 		Racional r1 = simplificar(this);
-		Racional r2 = simplificar((Racional) o);
+		Racional r2 = simplificar((Racional) o); // ????
 		return ((r1.numerador == r2.numerador) && (r1.denominador == r2.denominador));
 	}
 
