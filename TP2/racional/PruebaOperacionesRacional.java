@@ -11,10 +11,15 @@ class PruebaOperacionesRacional {
 
 		// Realizar operaciones con racionales
 		// 5/4 + 1/6 = 17/12
+		System.out.println(r1 + " + " + r2 + " = " + r1.sumar(r2));
 		// 5/4 - 1/6 = 13/12
+		System.out.println(r1 + " - " + r2 + " = " + r1.restar(r2));
 		// 5/4 * 1/6 = 5/24
+		System.out.println(r1 + " * " + r2 + " = " + r1.multiplicar(r2));
 		// 5/4 / 1/6 = 15/2
+		System.out.println(r1 + " / " + r2 + " = " + r1.dividir(r2));
 		// (5/4)^2 = 25/16
+		System.out.println(Racional.potencia(r1, 2));
 
 	}
 

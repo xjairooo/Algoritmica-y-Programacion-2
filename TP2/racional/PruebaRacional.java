@@ -5,6 +5,7 @@ class PruebaRacional {
 	public static void main(String[] args) {
 
 		// Se crean objetos de la clase Racional
+		// Si el denominador es 0 va a ver error (Chequeado en el constructor)
 		Racional r1 = new Racional(1, 2);
 		Racional r2 = new Racional(3, 4);
 		Racional r3 = new Racional(5, 8);
@@ -27,7 +28,7 @@ class PruebaRacional {
 		Racional r4 = r1.sumar(r2).sumar(r3);
 		System.out.println(r1 + " + " + r2 + " + " + r3 + " = " + r4);
 
-		// Llamar a un método estático
+		// Llamar a un mï¿½todo estï¿½tico
 		Racional r5 = Racional.simplificar(r4);
 		System.out.println(r1 + " + " + r2 + " + " + r3 + " = " + r5);
 
@@ -80,8 +81,7 @@ class PruebaRacional {
 		// Racional r8 = new Racional (a,b);
 		Racional r8 = new Racional((int) a, (int) b);
 		System.out.println(r8);
-				 		
-		
+
 	}
 
 }
