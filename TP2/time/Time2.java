@@ -1,104 +1,81 @@
-// Fig. 8.5: Time2.java
-// Time2 class declaration with overloaded constructors.  
+// Archivo: Time2.java
+// Declaración de la clase Time2 con constructores sobrecargados
 package time;
 
 public class Time2 {
-   private int hour; // 0 - 23
-   private int minute; // 0 - 59
-   private int second; // 0 - 59
+   private int hora;    // 0 - 23
+   private int minuto;  // 0 - 59
+   private int segundo; // 0 - 59
 
-   // Time2 no-argument constructor: initializes each instance variable
-   // to zero; ensures that Time2 objects start in a consistent state
+   // Constructor sin argumentos: inicializa todas las variables a cero
    public Time2() {
-      this(0, 0, 0); // invoke Time2 constructor with three arguments
-   } // end Time2 no-argument constructor
+      this(0, 0, 0); // Llama al constructor con tres argumentos
+   }
 
-   // Time2 constructor: hour supplied, minute and second defaulted to 0
+   // Constructor con hora, minuto y segundo por defecto a 0
    public Time2(int h) {
-      this(h, 0, 0); // invoke Time2 constructor with three arguments
-   } // end Time2 one-argument constructor
+      this(h, 0, 0); // Llama al constructor con tres argumentos
+   }
 
-   // Time2 constructor: hour and minute supplied, second defaulted to 0
+   // Constructor con hora y minuto, segundo por defecto a 0
    public Time2(int h, int m) {
-      this(h, m, 0); // invoke Time2 constructor with three arguments
-   } // end Time2 two-argument constructor
+      this(h, m, 0); // Llama al constructor con tres argumentos
+   }
 
-   // Time2 constructor: hour, minute and second supplied
+   // Constructor principal con hora, minuto y segundo
    public Time2(int h, int m, int s) {
-      setTime(h, m, s); // invoke setTime to validate time
-   } // end Time2 three-argument constructor
+      setTime(h, m, s); // Llama a setTime para validar los valores
+   }
 
-   // Time2 constructor: another Time2 object supplied
+   // Constructor que recibe otro objeto Time2 (constructor de copia)
    public Time2(Time2 time) {
-      // invoke Time2 three-argument constructor
       this(time.getHour(), time.getMinute(), time.getSecond());
-   } // end Time2 constructor with a Time2 object argument
+   }
 
-   // Set Methods
-   // set a new time value using universal time; ensure that
-   // the data remains consistent by setting invalid values to zero
+   // Métodos Set (Establecer valores)
    public void setTime(int h, int m, int s) {
-      setHour(h); // set the hour
-      setMinute(m); // set the minute
-      setSecond(s); // set the second
-   } // end method setTime
+      setHour(h);   // Establece la hora
+      setMinute(m); // Establece el minuto
+      setSecond(s); // Establece el segundo
+   }
 
-   // validate and set hour
+   // Valida y establece la hora (0-23)
    public void setHour(int h) {
-      hour = ((h >= 0 && h < 24) ? h : 0);
-   } // end method setHour
+      hora = ((h >= 0 && h < 24) ? h : 0);
+   }
 
-   // validate and set minute
+   // Valida y establece el minuto (0-59)
    public void setMinute(int m) {
-      minute = ((m >= 0 && m < 60) ? m : 0);
-   } // end method setMinute
+      minuto = ((m >= 0 && m < 60) ? m : 0);
+   }
 
-   // validate and set second
+   // Valida y establece el segundo (0-59)
    public void setSecond(int s) {
-      second = ((s >= 0 && s < 60) ? s : 0);
-   } // end method setSecond
+      segundo = ((s >= 0 && s < 60) ? s : 0);
+   }
 
-   // Get Methods
-   // get hour value
+   // Métodos Get (Obtener valores)
    public int getHour() {
-      return hour;
-   } // end method getHour
+      return hora;
+   }
 
-   // get minute value
    public int getMinute() {
-      return minute;
-   } // end method getMinute
+      return minuto;
+   }
 
-   // get second value
    public int getSecond() {
-      return second;
-   } // end method getSecond
+      return segundo;
+   }
 
-   // convert to String in universal-time format (HH:MM:SS)
+   // Convierte a String en formato universal (HH:MM:SS)
    public String toUniversalString() {
-      return String.format(
-            "%02d:%02d:%02d", getHour(), getMinute(), getSecond());
-   } // end method toUniversalString
+      return String.format("%02d:%02d:%02d", getHour(), getMinute(), getSecond());
+   }
 
-   // convert to String in standard-time format (H:MM:SS AM or PM)
+   // Convierte a String en formato estándar (H:MM:SS AM/PM)
    public String toString() {
       return String.format("%d:%02d:%02d %s",
             ((getHour() == 0 || getHour() == 12) ? 12 : getHour() % 12),
             getMinute(), getSecond(), (getHour() < 12 ? "AM" : "PM"));
-   } // end method toString
-} // end class Time2
-
-/**************************************************************************
- * (C) Copyright 1992-2007 by Deitel & Associates, Inc. and *
- * Pearson Education, Inc. All Rights Reserved. *
- * *
- * DISCLAIMER: The authors and publisher of this book have used their *
- * best efforts in preparing the book. These efforts include the *
- * development, research, and testing of the theories and programs *
- * to determine their effectiveness. The authors and publisher make *
- * no warranty of any kind, expressed or implied, with regard to these *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or *
- * consequential damages in connection with, or arising out of, the *
- * furnishing, performance, or use of these programs. *
- *************************************************************************/
+   }
+}
