@@ -28,5 +28,12 @@ public class PruebaFecha {
         } catch (IllegalArgumentException e) {
             System.out.println("Error controlado: " + e.getMessage());
         }
+        Fecha hoy = new Fecha(2023, 10, 15);
+        Fecha navidad = new Fecha(2023, 12, 25);
+
+        System.out.println("Días hasta navidad: " + hoy.diasEntre(navidad));
+        System.out.println("Día de la semana: " + hoy.diaDeLaSemana());
+        Fecha en30Dias = hoy.sumarDias(30);
+        System.out.println("En 30 días será: " + en30Dias);
     }
 }

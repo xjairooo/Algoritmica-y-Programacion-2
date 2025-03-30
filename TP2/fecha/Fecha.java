@@ -96,4 +96,104 @@ public class Fecha {
     public String toString() {
         return String.format("%04d-%02d-%02d", año, mes, dia);
     }
+
+    public boolean esMayorQue(Fecha otro) {
+        if (this.año != otro.año)
+            return this.año > otro.año;
+        if (this.mes != otro.mes)
+            return this.mes > otro.mes;
+        return this.dia > otro.dia;
+    }
+
+    public boolean esMenorQue(Fecha otro) {
+        if (this.año != otro.año)
+            return this.año < otro.año;
+        if (this.mes != otro.mes)
+            return this.mes < otro.mes;
+        return this.dia < otro.dia;
+    }
+
+    public boolean esIgualQue(Fecha otro) {
+        return this.año == otro.año && this.mes == otro.mes && this.dia == otro.dia;
+    }
+
+    /**
+     * Calcula la cantidad de días entre esta fecha y otra
+     */
+    public int diasEntre(Fecha otra) {
+        return Math.abs(this.toDias() - otra.toDias());
+    }
+
+    /**
+     * Suma (o resta) días a la fecha actual
+     */
+    public Fecha sumarDias(int dias) {
+        int total = this.toDias() + dias;
+        return fromDias(total);
+    }
+
+    /**
+     * Devuelve el día de la semana (Lunes-Domingo)
+     */
+    public String diaDeLaSemana() {
+        int a = año, m = mes, d = dia;
+        if (m < 3) {
+            m += 12;
+            a--;
+        }
+        int k = a % 100;
+        int j = a / 100;
+        int diaSemana = (d + 13 * (m + 1) / 5 + k + k / 4 + j / 4 + 5 * j) % 7;
+
+        String[] dias = { "Sábado", "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes" };
+        return dias[diaSemana];
+    }
+
+    // --- Métodos auxiliares privados ---
+
+    /**
+     * Convierte la fecha a días totales desde 1/1/1
+     */
+    private int toDias() {
+        int total = dia;
+        for (int m = 1; m < mes; m++) {
+            total += diasEnMes(m, año);
+        }
+        for (int a = 1; a < año; a++) {
+            total += esBisiesto(a) ? 366 : 365;
+        }
+        return total;
+    }
+
+    /**
+     * Crea una fecha desde días totales (1/1/1)
+     */
+    private static Fecha fromDias(int totalDias) {
+        int a = 1, m = 1, d = 1;
+
+        while (totalDias > (esBisiesto(a) ? 366 : 365)) {
+            totalDias -= esBisiesto(a) ? 366 : 365;
+            a++;
+        }
+
+        while (totalDias > diasEnMes(m, a)) {
+            totalDias -= diasEnMes(m, a);
+            m++;
+        }
+
+        d = totalDias;
+        return new Fecha(a, m, d);
+    }
+
+    private static int diasEnMes(int mes, int año) {
+        if (mes == 2) {
+            return esBisiesto(año) ? 29 : 28;
+        }
+        return (mes == 4 || mes == 6 || mes == 9 || mes == 11) ? 30 : 31;
+    }
+
+    private static boolean esBisiesto(int año) {
+        return (año % 400 == 0) || (año % 100 != 0 && año % 4 == 0);
+    }
+
 }
