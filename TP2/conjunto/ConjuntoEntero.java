@@ -2,73 +2,96 @@ package conjunto;
 
 import java.util.Arrays;
 
+/**
+ * La clase que representa un conjunto de numeros enteros en el rango 0-100.
+ * Implementa operaciones basicas de conjuntos usando un arreglo tipo boolean.
+ */
 public class ConjuntoEntero {
 
 	/**
-	 * final = significa q esa constate no va a cambiar
-	 * El arreglo conjunto tiene 101 elementos (índices de 0 a 100)
-	 * para cubrir el rango de 0 a 100
+	 * Tamaño MAX del conjunto (101 elementos para cubrir 0-100 inclusive)
 	 */
 	private static final int MAX = 101;
 
-	// Declara un array boolean
+	/**
+	 * Arreglo que almacena los elementos del conjunto.
+	 */
 	private boolean conjunto[];
 
-	// Inicializa el arreglo boolean para armar un conjunto vacio
+	/**
+	 * Constructor que inicializa un conjunto vacio.
+	 * Todos los valores se establecen a false inicialmente.
+	 */
 	public ConjuntoEntero() {
 		conjunto = new boolean[MAX];
 		for (int i = 0; i < conjunto.length; i++) {
-			conjunto[i] = false; // Inicializa todos los elementos en falso (no está en el conjunto) }
+			conjunto[i] = false;
 		}
 	}
 
 	/**
-	 * Inserta un entero k en el conjunto (lo marca como "true").
+	 * Inserta un numero en el conjunto marcando su posicion como true.
 	 * 
-	 * @param k El número a insertar (debe estar entre 0 y 100).
+	 * @param k El numero a insertar (debe estar en el rango[0, 100])
 	 */
 	public void insertarElemento(int k) {
-		if (k >= 0 && k < MAX) { // Verifica que k esté en el rango válido.
-			conjunto[k] = true; // Marca el número como presente.
+		if (k >= 0 && k < MAX) {
+			conjunto[k] = true;
 		} else {
-			System.out.println("Error: " + k + " está fuera del rango [0, 100].");
+			System.out.println("Error: " + k + " esta fuera del rango [0, 100].");
 		}
 	}
 
 	/**
-	 * Similar al anterior metodo solo que ahora devuelve false en ves de true
-	 * Elimina un entero k del conjunto (lo marca como "false").
+	 * Elimina un numero del conjunto marcando su posicion como false.
 	 * 
-	 * @param k El número a eliminar (debe estar entre 0 y 100).
+	 * @param k El numero a eliminar (debe estar en el rango[0, 100])
 	 */
 	public void eliminarElemento(int k) {
-		if (k >= 0 && k < MAX) { // Verifica que k esté en el rango válido.
-			conjunto[k] = false; // Marca el número como ausente.
+		if (k >= 0 && k < MAX) {
+			conjunto[k] = false;
 		} else {
-			System.out.println("Error: " + k + " está fuera del rango [0, 100].");
+			System.out.println("Error: " + k + " esta fuera del rango [0, 100].");
 		}
 	}
 
-	// Implementar
+	/**
+	 * Union (A ∪ B).
+	 * Realiza la union entre este conjunto y otro.
+	 * 
+	 * @param otro El conjunto con el que se realizara la union
+	 * @return Nuevo conjunto con la unión de ambos
+	 */
 	public ConjuntoEntero union(ConjuntoEntero otro) {
-		ConjuntoEntero resultado = new ConjuntoEntero(); // Crea un nuevo conjunto
+		ConjuntoEntero resultado = new ConjuntoEntero();
 		for (int i = 0; i < MAX; i++) {
 			resultado.conjunto[i] = this.conjunto[i] || otro.conjunto[i];
 		}
 		return resultado;
 	}
 
-	// Implementar
+	/**
+	 * Interseccion (A ∩ B)
+	 * Realiza la interseccion entre este conjunto y otro.
+	 * 
+	 * @param otro El conjunto con el que se realizara la interseccion
+	 * @return Nuevo conjunto con los elementos comunes
+	 */
 	public ConjuntoEntero interseccion(ConjuntoEntero otro) {
 		ConjuntoEntero resultado = new ConjuntoEntero();
 		for (int i = 0; i < MAX; i++) {
-			resultado.conjunto[i] = conjunto[i] && otro.conjunto[i];
+			resultado.conjunto[i] = this.conjunto[i] && otro.conjunto[i];
 		}
-
 		return resultado;
 	}
 
-	// Implementar
+	/**
+	 * Diferencia (A - B) o (B - A)
+	 * Realiza la diferencia entre este conjunto y otro.
+	 * 
+	 * @param otro El conjunto que se restara
+	 * @return Nuevo conjunto con los elementos de este que no estan en el otro
+	 */
 	public ConjuntoEntero diferencia(ConjuntoEntero otro) {
 		ConjuntoEntero resultado = new ConjuntoEntero();
 		for (int i = 0; i < MAX; i++) {
@@ -78,92 +101,49 @@ public class ConjuntoEntero {
 	}
 
 	/**
-	 * Devuelve los numeros del conjunto como texto separado osea por espacios.
-	 * Ejemplo: "3 7 10" para un conjunto con {3, 7, 10}.
+	 * Genera una representacion en String del conjunto.
+	 * 
+	 * @return String con los numeros del conjunto separados por espacios
 	 */
 	public String aStringConjunto() {
-		// "constructorTexto" es nuestro StringBuilder (construye texto eficientemente)
-		// StringBuilder es un objeto que pertenece dentro de la clase de String
-		StringBuilder constructorTexto = new StringBuilder();
-
-		// Itera sobre cada número del rango [0, 100] y si estA en el conjunto, añade el
-		// numero al StringBuilder.
-		for (int numero = 0; numero < MAX; numero++) {
-			if (conjunto[numero]) { // Si el número está en el conjunto
-				constructorTexto.append(numero).append(" "); // Añade el número + espacio
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < MAX; i++) {
+			if (conjunto[i]) {
+				sb.append(i).append(" ");
 			}
 		}
-
-		// Convierte a String y elimina el espacio final sobrante
-		return constructorTexto.toString().trim();
+		return sb.toString().trim();
 	}
 
 	/**
-	 * Calcula un valor hash (código numérico único) para este conjunto.
-	 * Este valor se basa en los números contenidos en el conjunto.
+	 * Calcula el codigo hash para el conjunto.
 	 * 
-	 * Reglas importantes:
-	 * - Si dos conjuntos son iguales según equals(), deben tener el mismo hashCode
-	 * - Conjuntos diferentes pueden tener el mismo hashCode (aunque es raro)
-	 * 
-	 * Ejemplo:
-	 * Si tienes los números {3, 5} en el conjunto, hashCode generará un número
-	 * como 32768 (el valor exacto depende de la fórmula). Otro conjunto con {3, 5}
-	 * tendrá EL MISMO código.
-	 * 
-	 * @return Un código numérico que representa este conjunto
+	 * @return Codigo hash basado en los elementos del conjunto
 	 */
 	@Override
 	public int hashCode() {
-		// Usamos el número primo 31 para calcular el hash porque:
-		// 1. Es un número impar primo
-		// 2. La multiplicación por 31 puede optimizarse en la JVM
-		// 3. Reduce colisiones de hash
 		final int prime = 31;
-
-		// Valor inicial del hash (puede ser cualquier número, 1 es común)
 		int result = 1;
-
-		// Calcula el hash del arreglo 'conjunto' y lo combina con el resultado:
-		// 1. Arrays.hashCode() genera un hash basado en los elementos del arreglo
-		// 2. Se multiplica por 'prime' y se suma para mezclar mejor los bits
 		result = prime * result + Arrays.hashCode(conjunto);
-
-		// Retorna el código hash final
 		return result;
 	}
 
 	/**
-	 * Compara este conjunto con otro objeto para ver si son iguales.
-	 * Dos conjuntos son iguales si contienen exactamente los mismos números.
+	 * Compara este conjunto con otro objeto para determinar igualdad.
 	 * 
-	 * @param obj El objeto a comparar (puede ser cualquier objeto)
-	 * @return true si son iguales, false si son diferentes
-	 * @throws ClassCastException si el objeto no es un ConjuntoEntero
+	 * @param obj El objeto a comparar
+	 * @return true si son iguales, false en caso contrario
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		// Caso 1: ¿Es exactamente el mismo objeto en memoria?
-		if (this == obj) {
+		if (this == obj)
 			return true;
-		}
-
-		// Caso 2: ¿El objeto es null?
-		if (obj == null) {
+		if (obj == null)
 			return false;
-		}
-
-		// Caso 3: ¿Es de la misma clase exacta?
-		if (getClass() != obj.getClass()) {
+		if (getClass() != obj.getClass())
 			return false;
-		}
 
-		// Ahora podemos hacer la conversión segura a ConjuntoEntero
 		ConjuntoEntero other = (ConjuntoEntero) obj;
-
-		// Comparación real: ¿Tienen los mismos números?
-		// Arrays.equals() compara elemento por elemento en los arreglos
 		return Arrays.equals(conjunto, other.conjunto);
 	}
-
 }
