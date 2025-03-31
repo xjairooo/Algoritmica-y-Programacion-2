@@ -7,9 +7,10 @@ public class EmployeeTest {
    public static void main(String args[]) {
       Date birth = new Date(7, 24, 1949);
       Date hire = new Date(3, 12, 1988);
-      Employee employee = new Employee("Bob", "Blue", birth, hire);
-
-      System.out.println(employee);
+      // Employee employee = new Employee("Bob", "Blue", 21, 44);
+      System.err.println(birth);
+      System.err.println(hire);
+      // System.out.println(employee);
    } // end main
 } // end class EmployeeTest
 
