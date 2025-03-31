@@ -34,4 +34,6 @@ public abstract class Empleado {
             nombre, numeroDocumento);
    }
 
+   public abstract double calcularSalario();
+
 }
