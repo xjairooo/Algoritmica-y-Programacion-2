@@ -109,9 +109,12 @@ public class ConjuntoEntero {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < MAX; i++) {
 			if (conjunto[i]) {
+				// Agrega el elemento al StringBuilder si es parte del conjunto
+				// Se agrega un espacio entre los elementos
 				sb.append(i).append(" ");
 			}
 		}
+		// Convierte el StringBuilder a String y elimina el espacio final
 		return sb.toString().trim();
 	}
 
