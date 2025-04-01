@@ -13,5 +13,5 @@ public class PruebaFactura {
 		System.out.println("Total de la factura: " + f2.obtenerPago());
 
 	}
-	
+
 }

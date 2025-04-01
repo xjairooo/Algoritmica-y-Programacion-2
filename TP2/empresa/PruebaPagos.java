@@ -1,7 +1,10 @@
 package empresa;
 
-/*Esta clase es para probar las clases Factura y Empleado, poniendolos en el arreglo llamado 'pagos'
- * que es de tipo PorPagar.
+/**
+ * Esta clase es para probar las clases Factura y Empleado, poniendolos en el
+ * arreglo llamado 'pagos' que es de tipo PorPagar.
+ * 
+ * @author Jairo, Alexis y Jose
  */
 public class PruebaPagos {
 
@@ -37,19 +40,18 @@ public class PruebaPagos {
 		pagos[9] = new Factura("Proveedor 5", 5, "05/01/2025");
 		((Factura) pagos[9]).agregarItem("Impresora", 2, 1000000.0);
 
-		// Escribir el resultado que tienen que pagar cada uno
-		System.out.println("================ LISTADO DE PAGOS ================");
-		System.out.printf("%-8s %-20s %-15s %n", "Ítem", "Tipo", "Importe a Pagar");
-		System.out.println();
-
 		System.out.println("\n=== RESUMEN DE PAGOS ===");
+		// Recorre el arreglo de pagos y muestra el tipo de pago y el monto a pagar
+		// Utiliza el método obtenerPago() para obtener el monto a pagar
 		for (int i = 0; i < pagos.length; i++) {
+			// Verifica si el objeto es un Empleado o una Factura
+			// y asigna el tipo correspondiente
 			String tipo = (pagos[i] instanceof Empleado) ? "EMP" : "FACT";
+			// Imprime el tipo de pago y el monto a pagar
 			System.out.printf("[%s %2d] $%8.2f%n",
 					tipo,
 					i + 1,
 					pagos[i].obtenerPago());
 		}
-		System.out.println("=======================");
 	}
 }
