@@ -1,5 +1,4 @@
 package conjunto;
-
 public class PruebaConjunto {
 
 	public static void main(String[] args) {
@@ -9,10 +8,10 @@ public class PruebaConjunto {
 		ConjuntoEntero conjuntoB = new ConjuntoEntero();
 
 		// Agregamos elementos al conjunto A
-		conjuntoA.insertarElemento(5); // Numero valido
-		conjuntoA.insertarElemento(10); // Numero valido
-		conjuntoA.insertarElemento(15); // Numero valido
-		conjuntoA.insertarElemento(20); // Numero valido
+		conjuntoA.insertarElemento(5); 
+		conjuntoA.insertarElemento(10); 
+		conjuntoA.insertarElemento(15); 
+		conjuntoA.insertarElemento(20); 
 
 		// Agregamos elementos al conjunto B
 		conjuntoB.insertarElemento(10); // Presente en ambos conjuntos
@@ -32,7 +31,7 @@ public class PruebaConjunto {
 
 		// Union: Todos los elementos de A y B
 		// Esperado: 5 10 15 20 25 30
-		System.out.println("Union (A U B):        " + conjuntoA.union(conjuntoB).aStringConjunto());
+		System.out.println("Union (A U B): " + conjuntoA.union(conjuntoB).aStringConjunto());
 
 		// Interseccion: Solo elementos comunes
 		// Esperado: 10 20
@@ -40,11 +39,11 @@ public class PruebaConjunto {
 
 		// Diferencia A-B: Elementos en A que no estan en B
 		// Esperado: 5 15
-		System.out.println("Diferencia (A - B):   " + conjuntoA.diferencia(conjuntoB).aStringConjunto());
+		System.out.println("Diferencia (A - B): " + conjuntoA.diferencia(conjuntoB).aStringConjunto());
 
 		// Diferencia B-A: Elementos en B que no estan en A
 		// Esperado: 25 30
-		System.out.println("Diferencia (B - A):   " + conjuntoB.diferencia(conjuntoA).aStringConjunto());
+		System.out.println("Diferencia (B - A): " + conjuntoB.diferencia(conjuntoA).aStringConjunto());
 		System.out.println();
 
 		// PRUEBA 3: Comparacion de conjuntos

@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * La clase que representa un conjunto de numeros enteros en el rango 0-100.
  * Implementa operaciones basicas de conjuntos usando un arreglo tipo boolean.
+ * 
+ * @author Jairo, Alexis y Jose
  */
 public class ConjuntoEntero {
 
