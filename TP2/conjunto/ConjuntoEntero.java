@@ -86,7 +86,7 @@ public class ConjuntoEntero {
 		}
 		return resultado;
 	}
-
+    
 	/**
 	 * Diferencia (A - B) o (B - A)
 	 * Realiza la diferencia entre este conjunto y otro.
@@ -97,7 +97,7 @@ public class ConjuntoEntero {
 	public ConjuntoEntero diferencia(ConjuntoEntero otro) {
 		ConjuntoEntero resultado = new ConjuntoEntero();
 		for (int i = 0; i < MAX; i++) {
-			resultado.conjunto[i] = this.conjunto[i] && !otro.conjunto[i];
+			resultado.conjunto[i] = this.conjunto[i] && !otro.conjunto[i];	
 		}
 		return resultado;
 	}
@@ -135,6 +135,7 @@ public class ConjuntoEntero {
 
 	/**
 	 * Compara este conjunto con otro objeto para determinar igualdad.
+	 * equals seria esIgualA en la consigna
 	 * 
 	 * @param obj El objeto a comparar
 	 * @return true si son iguales, false en caso contrario

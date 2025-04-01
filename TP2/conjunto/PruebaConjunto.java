@@ -42,6 +42,8 @@ public class PruebaConjunto {
 		System.out.println("Diferencia (A - B): " + conjuntoA.diferencia(conjuntoB).aStringConjunto());
 
 		// Diferencia B-A: Elementos en B que no estan en A
+		// Conjunto A: 5 10 15 20
+		// Conjunto B: 10 20 25 30
 		// Esperado: 25 30
 		System.out.println("Diferencia (B - A): " + conjuntoB.diferencia(conjuntoA).aStringConjunto());
 		System.out.println();
