@@ -1,8 +1,10 @@
 package empresa;
 
+// utiliza la interfaz PorPagar por eso implementa la interfaz
 public class Empleado implements PorPagar {
 
 	// Atributos
+	//
 	private int legajo;
 	private String nombre;
 	private int horasTrabajadas;
@@ -22,9 +24,10 @@ public class Empleado implements PorPagar {
 	// Metodo empleado por la interfaz
 	// Calcula el sueldo de un empleado
 	public double obtenerPago() {
-		return 0.0;
+		return horasTrabajadas * valorHora; // Añadido
 	}
 
+	// Mejorar el metodo toString para que imprima el nombre del supervisor
 	@Override
 	public String toString() {
 		if (supervisor == null)

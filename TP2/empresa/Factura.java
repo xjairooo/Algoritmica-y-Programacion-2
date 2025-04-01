@@ -19,13 +19,19 @@ public class Factura implements PorPagar {
 		this.proveedor = proveedor;
 		this.numero = numero;
 		this.fecha = fecha;
-		articulos = new Item[CANTIDAD_ITEMS];
+		articulos = new Item[CANTIDAD_ITEMS]; // Crea un objeto articulos donde se almacena los items
+		// Se inicializa el arreglo de articulos con la cantidad de items
 	}
 
 	// Metodo implementado por la interfaz
 	// Calcula el total de la factura
 	public double obtenerPago() {
-		return 0.0;
+		double total = 0.0;
+		for (int i = 0; i < cantArticulos; i++) {
+			total += articulos[i].cantidad * articulos[i].precioUnitario; // Se multiplica la cantidad por el precio
+																			// unitario
+		}
+		return total;
 	}
 
 	// Metodo para agregar un articulo al arreglo de tipo Item

@@ -12,13 +12,44 @@ public class PruebaPagos {
 
 		// Cargar cinco empleados y cinco facturas
 
+		// ---Empleados y Jefe---
+		Empleado jefe = new Empleado(1, "Messi", null, 40, 2500.0);
+		pagos[0] = new Empleado(2, "Victor", jefe, 40, 1700.0);
+		pagos[1] = new Empleado(3, "Leonel", jefe, 30, 1500.0);
+		pagos[2] = new Empleado(4, "Alexis", jefe, 25, 1600.0);
+		pagos[3] = new Empleado(5, "Oconer", jefe, 20, 2000.0);
+		pagos[4] = jefe; // Asignar el jefe al arreglo de pagos
 
-		// Asignar los objetos creados a un lugar del arreglo 'pagos'
-		
-		
+		// ---Facturas---
+		pagos[5] = new Factura("Proveedor 1", 1, "01/01/2025");
+		((Factura) pagos[5]).agregarItem("Teclado", 2, 35000.0);
+		((Factura) pagos[5]).agregarItem("Mouse", 1, 15000.0);
+
+		pagos[6] = new Factura("Proveedor 2", 2, "02/01/2025");
+		((Factura) pagos[6]).agregarItem("Cuadernos", 5, 3500.0);
+
+		pagos[7] = new Factura("Proveedor 3", 3, "03/01/2025");
+		((Factura) pagos[7]).agregarItem("Vasos", 10, 1000.0);
+
+		pagos[8] = new Factura("Proveedor 4", 4, "04/01/2025");
+		((Factura) pagos[8]).agregarItem("Cartas", 7, 2500.0);
+
+		pagos[9] = new Factura("Proveedor 5", 5, "05/01/2025");
+		((Factura) pagos[9]).agregarItem("Impresora", 2, 1000000.0);
+
 		// Escribir el resultado que tienen que pagar cada uno
+		System.out.println("================ LISTADO DE PAGOS ================");
+		System.out.printf("%-8s %-20s %-15s %n", "Ítem", "Tipo", "Importe a Pagar");
+		System.out.println();
+
+		System.out.println("\n=== RESUMEN DE PAGOS ===");
 		for (int i = 0; i < pagos.length; i++) {
-			System.out.printf("Importes a pagar: %.02f\n", pagos[i].obtenerPago());
+			String tipo = (pagos[i] instanceof Empleado) ? "EMP" : "FACT";
+			System.out.printf("[%s %2d] $%8.2f%n",
+					tipo,
+					i + 1,
+					pagos[i].obtenerPago());
 		}
+		System.out.println("=======================");
 	}
 }
