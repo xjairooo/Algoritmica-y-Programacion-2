@@ -7,6 +7,7 @@ public class PruebaConjunto {
 		ConjuntoEntero conjuntoA = new ConjuntoEntero();
 		ConjuntoEntero conjuntoB = new ConjuntoEntero();
 
+		System.out.println("Hola mundo");
 		// Agregamos elementos al conjunto A
 		conjuntoA.insertarElemento(5); 
 		conjuntoA.insertarElemento(10); 
