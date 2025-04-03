@@ -15,8 +15,8 @@ public class PruebaEmpleado {
 		 * Imprimo los datos de los empleados y el sueldo que tienen que cobrar
 		 */
 		System.out.println(e1);
-		System.out.println("Sueldo: " + e1.obtenerPago());
+		System.out.println("Sueldo: $" + e1.obtenerPago());
 		System.out.println(e2);
-		System.out.println("Sueldo: " + e2.obtenerPago());
+		System.out.println("Sueldo: $" + e2.obtenerPago());
 	}
 }

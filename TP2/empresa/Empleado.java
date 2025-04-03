@@ -9,6 +9,7 @@ package empresa;
  * double pago = juan.obtenerPago(); // 40 * 10 = 400.0
  * 
  * @see PorPagar
+ * @author Jairo, Alexis y Jose
  */
 public class Empleado implements PorPagar {
 
@@ -37,6 +38,54 @@ public class Empleado implements PorPagar {
 		this.valorHora = valorHora;
 	}
 
+	public int getLegajo() {
+		return legajo;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public int getHorasTrabajadas() {
+		return horasTrabajadas;
+	}
+
+	/**
+	 * Establece las horas trabajadas por el empleado
+	 * 
+	 * @param horas Las horas trabajadas (debe ser >= 0)
+	 * @throws IllegalArgumentException Si las horas son negativas
+	 */
+	public void setHorasTrabajadas(int horas) {
+		if (horas < 0)
+			throw new IllegalArgumentException("Horas no pueden ser negativas");
+		this.horasTrabajadas = horas;
+	}
+
+	public double getValorHora() {
+		return valorHora;
+	}
+
+	/**
+	 * Establece el valor por hora del empleado
+	 * 
+	 * @param valor El valor por hora (debe ser > 0)
+	 * @throws IllegalArgumentException Si el valor no es positivo
+	 */
+	public void setValorHora(double valor) {
+		if (valor <= 0)
+			throw new IllegalArgumentException("Valor por hora debe ser positivo");
+		this.valorHora = valor;
+	}
+
+	public Empleado getSupervisor() {
+		return supervisor;
+	}
+
+	public void setSupervisor(Empleado supervisor) {
+		this.supervisor = supervisor;
+	}
+
 	/**
 	 * Calcula el pago multiplicando (horasTrabajadas * valorHora)
 	 * 
@@ -51,6 +100,7 @@ public class Empleado implements PorPagar {
 	 * Muestra los datos del empleado como texto
 	 * 
 	 * @return Informacion del empleado
+	 * @see PorPagar
 	 */
 	@Override
 	public String toString() {

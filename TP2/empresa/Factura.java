@@ -1,6 +1,7 @@
 package empresa;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase que representa una factura de compra a proveedores
@@ -76,10 +77,40 @@ public class Factura implements PorPagar {
 		this.articulos[cantArticulos++] = new Item(descripcion, cantidad, precioUnitario);
 	}
 
+	/**
+	 * Genera una representacion en String de la factura mostrando sus datos
+	 * principales.
+	 * Filtra automaticamente los articulos nulos para mostrar solo los existentes.
+	 * 
+	 * 
+	 * @return String con los datos de la factura formateados en lineas separadas
+	 */
 	@Override
 	public String toString() {
+		/**
+		 * Filtra y convierte los artiulos no nulos a una lista de Strings.
+		 * 
+		 * Paso a paso:
+		 * 1. Se crea una lista vacIa (ArrayList) para almacenar los artIculos validos
+		 * 2. Se recorre cada elemento del array original 'articulos' usando un for-each
+		 * 3. Para cada articulo:
+		 * a) Se verifica si no es null (if (articulo != null))
+		 * b) Si es valido, se convierte a String (toString()) y se agrega a la lista
+		 * 4. Al finalizar, 'articulosList' contiene solo representaciones String de
+		 * articulos no nulos
+		 * 
+		 * Ejemplo concreto:
+		 * Si articulos = ["Lapiz", null, "Borrador", null, "Regla"]
+		 * La lista resultante sera: ["Lapiz", "Borrador", "Regla"]
+		 */
+		List<String> articulosList = new ArrayList<>();
+		for (Object articulo : articulos) {
+			if (articulo != null) {
+				articulosList.add(articulo.toString());
+			}
+		}
 		return "Factura proveedor: " + proveedor + " \nNumero: " + numero + "\nFecha: " + fecha
-				+ "\nCantidad de Articulos: " + cantArticulos + "\nArticulos: " + Arrays.toString(articulos);
+				+ "\nCantidad de Articulos: " + cantArticulos + "\nArticulos: " + articulosList;
 	}
 
 	/**
