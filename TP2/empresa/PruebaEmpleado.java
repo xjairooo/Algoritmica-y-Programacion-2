@@ -10,7 +10,6 @@ public class PruebaEmpleado {
 		 */
 		Empleado e1 = new Empleado(1234, "Juan", null, 40, 25);
 		Empleado e2 = new Empleado(1235, "Ana", e1, 40, 15);
-		System.out.println("Hola mundo");
 		/**
 		 * Imprimo los datos de los empleados y el sueldo que tienen que cobrar
 		 */
