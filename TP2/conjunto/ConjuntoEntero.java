@@ -35,12 +35,13 @@ public class ConjuntoEntero {
 	 * Inserta un numero en el conjunto marcando su posicion como true.
 	 * 
 	 * @param k El numero a insertar (debe estar en el rango[0, 100])
+	 * @throws IllegalArgumentException si k esta fuera del rango valido
 	 */
 	public void insertarElemento(int k) {
 		if (k >= 0 && k < MAX) {
 			conjunto[k] = true;
 		} else {
-			System.out.println("Error: " + k + " esta fuera del rango [0, 100].");
+			throw new IllegalArgumentException("Error: " + k + " está fuera del rango [0, 100].");
 		}
 	}
 
@@ -48,12 +49,13 @@ public class ConjuntoEntero {
 	 * Elimina un numero del conjunto marcando su posicion como false.
 	 * 
 	 * @param k El numero a eliminar (debe estar en el rango[0, 100])
+	 * @throws IllegalArgumentException si k esta fuera del rango valido
 	 */
 	public void eliminarElemento(int k) {
 		if (k >= 0 && k < MAX) {
 			conjunto[k] = false;
 		} else {
-			System.out.println("Error: " + k + " esta fuera del rango [0, 100].");
+			throw new IllegalArgumentException("Error: " + k + " está fuera del rango [0, " + (MAX - 1) + "]");
 		}
 	}
 
@@ -86,7 +88,7 @@ public class ConjuntoEntero {
 		}
 		return resultado;
 	}
-    
+
 	/**
 	 * Diferencia (A - B) o (B - A)
 	 * Realiza la diferencia entre este conjunto y otro.
@@ -97,7 +99,7 @@ public class ConjuntoEntero {
 	public ConjuntoEntero diferencia(ConjuntoEntero otro) {
 		ConjuntoEntero resultado = new ConjuntoEntero();
 		for (int i = 0; i < MAX; i++) {
-			resultado.conjunto[i] = this.conjunto[i] && !otro.conjunto[i];	
+			resultado.conjunto[i] = this.conjunto[i] && !otro.conjunto[i];
 		}
 		return resultado;
 	}

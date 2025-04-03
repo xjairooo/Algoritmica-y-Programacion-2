@@ -1,4 +1,5 @@
 package conjunto;
+
 public class PruebaConjunto {
 
 	public static void main(String[] args) {
@@ -9,10 +10,10 @@ public class PruebaConjunto {
 
 		System.out.println("Hola mundo");
 		// Agregamos elementos al conjunto A
-		conjuntoA.insertarElemento(5); 
-		conjuntoA.insertarElemento(10); 
-		conjuntoA.insertarElemento(15); 
-		conjuntoA.insertarElemento(20); 
+		conjuntoA.insertarElemento(5);
+		conjuntoA.insertarElemento(10);
+		conjuntoA.insertarElemento(15);
+		conjuntoA.insertarElemento(20);
 
 		// Agregamos elementos al conjunto B
 		conjuntoB.insertarElemento(10); // Presente en ambos conjuntos
@@ -103,6 +104,6 @@ public class PruebaConjunto {
 		// Intentamos insertar numeros fuera de rango
 		// Esperado: Mensajes de error para ambos casos
 		conjuntoA.insertarElemento(-5); // Numero negativo -> Error
-		conjuntoA.insertarElemento(150); // Numero mayor a 100 -> Error
+		conjuntoA.insertarElemento(200); // Numero mayor a 100 -> Error
 	}
 }

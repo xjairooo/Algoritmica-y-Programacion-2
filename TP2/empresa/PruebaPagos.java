@@ -13,8 +13,6 @@ public class PruebaPagos {
 		// Empiezo a instanciar los objetos de clase Facturas y Empleados
 		PorPagar pagos[] = new PorPagar[10];
 
-		// Cargar cinco empleados y cinco facturas
-
 		// ---Empleados y Jefe---
 		Empleado jefe = new Empleado(1, "Messi", null, 40, 2500.0);
 		pagos[0] = new Empleado(2, "Victor", jefe, 40, 1700.0);
@@ -25,6 +23,7 @@ public class PruebaPagos {
 
 		// ---Facturas---
 		pagos[5] = new Factura("Proveedor 1", 1, "01/01/2025");
+		// Agrega items a la factura
 		((Factura) pagos[5]).agregarItem("Teclado", 2, 35000.0);
 		((Factura) pagos[5]).agregarItem("Mouse", 1, 15000.0);
 
@@ -44,8 +43,12 @@ public class PruebaPagos {
 		// Recorre el arreglo de pagos y muestra el tipo de pago y el monto a pagar
 		// Utiliza el método obtenerPago() para obtener el monto a pagar
 		for (int i = 0; i < pagos.length; i++) {
-			// Verifica si el objeto es un Empleado o una Factura
-			// y asigna el tipo correspondiente
+			/**
+			 * Verifica si el objeto en pagos[i] es una instancia de la clase Empleado
+			 * o de la clase Factura.
+			 * Si es una instancia de Empleado, se asigna "EMP" a la variable tipo,
+			 * si es una instancia de Factura, se asigna "FACT".
+			 */
 			String tipo = (pagos[i] instanceof Empleado) ? "EMP" : "FACT";
 			// Imprime el tipo de pago y el monto a pagar
 			System.out.printf("[%s %2d] $%8.2f%n",
