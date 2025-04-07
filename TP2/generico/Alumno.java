@@ -49,7 +49,7 @@ public class Alumno {
 		if (getClass() != obj.getClass())
 			return false;
 		Alumno other = (Alumno) obj;
-		if (legajo != other.legajo)
+		if (legajo != other.legajo)	// lo compara con el hashcode y su resultado
 			return false;
 		return true;
 	}
