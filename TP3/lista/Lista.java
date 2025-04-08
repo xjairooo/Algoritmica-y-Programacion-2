@@ -1,9 +1,13 @@
+/**
+ * Clase Lista
+ * 
+ * @author Jairo, Alexis y Juan
+ */
 package TP3.lista;
 public class Lista<E> {
-
 	private E lista[];
 	private int indice;
-	private final int MAXELEM;
+	private final int MAXELEM;	// no puede cambiar de valor
 
 	public Lista(int n) {
 		lista = (E[]) new Object[n];
@@ -11,21 +15,43 @@ public class Lista<E> {
 		indice = 0;
 	}
 
-	/* Agrega un elemento al final de la lista */
+	/** Agrega un elemento al final de la lista 
+	 * @param e el elemento a agregar
+	*/
 	public void add(E e) throws IndexOutOfBoundsException {
+		// Si la lista esta llena, lanza una IndexOutOfBoundsException
 		if (indice == MAXELEM)
 			throw new IndexOutOfBoundsException("Lista llena");
-		lista[indice++] = e;
+		// Si la lista esta vacia, agrega el elemento en la posicion 0
+			lista[indice++] = e;
 	}
-
-	/* Agrega un elemento a la lista en la posici�n p */
+	
+	/** Agrega un elemento a la lista en la posición p 
+	 * @param p la posición donde se quiere agregar el elemento
+	 * @param e el elemento a agregar
+	*/
 	public void add(int p, E e) throws IndexOutOfBoundsException {
+		// Si la posición es inválida, lanza una IndexOutOfBoundsException
+		if (p < 0 || p > indice)
+			throw new IndexOutOfBoundsException("Indice invalido: " + p);
+		// Si la lista esta llena, lanza una IndexOutOfBoundsException
+		if (indice == MAXELEM)
+			throw new IndexOutOfBoundsException("Lista llena");
+		// Desplaza los elementos a la derecha para hacer espacio al nuevo elemento
+		for (int i = indice; i > p; i--)
+			lista[i] = lista[i - 1];
+		lista[p] = e;
+		indice++;
 	}
 
-	/* Retorna el elemento que se encuentra en p */
+	/** Retorna el elemento que se encuentra en p 
+	 * 
+	 * @throws IndexOutOfBoundsException si p es menor a 0 o mayor o igual a indice
+	 */
+	
 	public E get(int p) throws IndexOutOfBoundsException {		
 		if (p < 0 || p >= indice)
-			throw new IndexOutOfBoundsException("Indice inv�lido: " + p);
+			throw new IndexOutOfBoundsException("Indice invalido: " + p);
 		return lista[p];
 	}
 
@@ -41,7 +67,10 @@ public class Lista<E> {
 		return remove(i);
 	}
 
-	/* Remueve el elemento que se encuentra en la posici�n p */
+	/**
+	 *  Remueve el elemento que se encuentra en la posición p
+	 * 
+	 */
 	public E remove(int p) throws IndexOutOfBoundsException {
 		return null;
 	}
