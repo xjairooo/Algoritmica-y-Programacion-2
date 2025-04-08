@@ -1,8 +1,10 @@
 package TP3.lista.test;
 
+import TP3.lista.Lista;
 
 public class TestAdd {
 
+	// PARA CHEQUEAR TODOS LOS CASOS DE ADD
 	public static void main(String[] args) {
 
 		testAdd1();
