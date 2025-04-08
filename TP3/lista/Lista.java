@@ -69,10 +69,18 @@ public class Lista<E> {
 
 	/**
 	 *  Remueve el elemento que se encuentra en la posición p
-	 * 
+	 *  @param p la posición del elemento a remover
+	 *  @return el elemento removido
 	 */
 	public E remove(int p) throws IndexOutOfBoundsException {
-		return null;
+		if (p < 0 || p >= indice)
+			throw new IndexOutOfBoundsException("Indice invalido: " + p);
+		E e = lista[p];
+		// Desplaza los elementos a la izquierda para llenar el espacio
+		for (int i = p; i < indice - 1; i++)
+			lista[i] = lista[i + 1];
+		indice--;
+		return e;
 	}
 	
 	public String toString(){
