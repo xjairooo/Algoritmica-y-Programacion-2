@@ -1,4 +1,4 @@
-package TP3.lista;
+package TP3.lista.src;
 public class Empleado {
 
 	private int legajo;

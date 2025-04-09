@@ -1,4 +1,4 @@
-package TP3.lista;
+package TP3.lista.src;
 public class PruebaLista {
 
 	public static void main(String[] args) {

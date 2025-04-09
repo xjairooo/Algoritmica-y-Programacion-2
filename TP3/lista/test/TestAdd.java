@@ -1,6 +1,6 @@
 package TP3.lista.test;
 
-import TP3.lista.Lista;
+import TP3.lista.src.Lista;
 
 public class TestAdd {
 

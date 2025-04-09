@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import lista.Lista;
+import TP3.lista.src.Lista;
 
-
+ 
 
 public class TestJUAdd {
 

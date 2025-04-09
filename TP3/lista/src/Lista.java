@@ -3,7 +3,7 @@
  * 
  * @author Jairo, Alexis y Juan
  */
-package TP3.lista;
+package TP3.lista.src;
 public class Lista<E> {
 	private E lista[];
 	private int indice;
