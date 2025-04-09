@@ -1,4 +1,4 @@
-package figura;
+package TP3.ejemplo.clone.figura;
 
 public class Punto implements Cloneable {
 	private int x;

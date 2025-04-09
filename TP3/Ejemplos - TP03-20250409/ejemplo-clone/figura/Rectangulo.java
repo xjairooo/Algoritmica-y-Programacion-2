@@ -1,4 +1,4 @@
-package figura;
+package TP3.ejemplo.clone.figura;
 
 public class Rectangulo implements Cloneable {
 	private int ancho;
@@ -57,7 +57,7 @@ public class Rectangulo implements Cloneable {
 		} catch (CloneNotSupportedException ex) {
 			System.out.println(" no se puede duplicar");
 		}
-		// Probar que pasa si se comenta la siguiente línea.
+		// Probar que pasa si se comenta la siguiente lï¿½nea.
 		obj.origen = (Punto) obj.origen.clone();
 		return obj;
 	}

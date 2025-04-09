@@ -1,4 +1,6 @@
-package figura;
+
+
+import figura.Rectangulo;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -17,7 +19,7 @@ class TestJUnit {
 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
-		System.out.println("Después de finalizar el Test");
+		System.out.println("Despuï¿½s de finalizar el Test");
 	}
 
 	@BeforeEach
@@ -27,7 +29,7 @@ class TestJUnit {
 
 	@AfterEach
 	void tearDown() throws Exception {
-		System.out.println("Después de finalizar Test individual");		
+		System.out.println("Despuï¿½s de finalizar Test individual");		
 	}
 
 	@Test
