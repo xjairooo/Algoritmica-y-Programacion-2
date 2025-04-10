@@ -3,7 +3,6 @@ package generico;
 public class TestPortfolio {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 
 		Portfolio<String> p1 = new Portfolio<String>(6);

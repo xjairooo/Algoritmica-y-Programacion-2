@@ -1,4 +1,3 @@
-
 import figura.Rectangulo;
 
 import static org.junit.Assert.assertTrue;
