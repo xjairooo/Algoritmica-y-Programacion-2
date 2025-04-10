@@ -13,6 +13,10 @@ public class Lista<E> {
 		lista = (E[]) new Object[n];
 		MAXELEM = n;
 		indice = 0;
+		System.out.println("Lista creada con capacidad para " + n + " elementos.");
+	}
+	public Lista() {
+		this(10); // por defecto, la lista tiene capacidad para 10 elementos
 	}
 
 	/** Agrega un elemento al final de la lista 
