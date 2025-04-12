@@ -88,22 +88,31 @@ public class Lista<E> {
 		indice--;
 		return eliminado;
 	}
+
+	/**
+	 * Se agrego porque 'Assert.assertEquals' lo requiere para comparar listas,
+	 * osea su contenido de las listas, no solo sus referencias. 
+	 * Por esta razon se implemento el metodo equals de manera de sobreescribir el de la clase Object.
+	 * 
+	 * Conclusion: Con el metodo equals sobrescrito, ahora las pruebas pueden verificar correctamente
+	 * si dos listas son equivalentes en su contenido. 
+	 */
 	@Override
-public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null || getClass() != obj.getClass()) return false;
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
 
-    Lista<?> otraLista = (Lista<?>) obj;
+		Lista<?> otraLista = (Lista<?>) obj;
 
-    if (this.indice != otraLista.indice) return false;
+		if (this.indice != otraLista.indice) return false;
 
-    for (int i = 0; i < this.indice; i++) {
-        if (!this.lista[i].equals(otraLista.lista[i])) {
-            return false;
-        }
-    }
-    return true;
-}
+		for (int i = 0; i < this.indice; i++) {
+			if (!this.lista[i].equals(otraLista.lista[i])) {
+				return false;
+			}
+		}
+		return true;
+	}
 	public String toString(){
 		String s = "";
 		for(int i=0; i<indice; i++)
