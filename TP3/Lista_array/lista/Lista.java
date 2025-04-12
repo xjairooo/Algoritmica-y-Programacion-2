@@ -1,3 +1,4 @@
+package lista;
 public class Lista<E> {
 
 	private E lista[];
@@ -87,7 +88,22 @@ public class Lista<E> {
 		indice--;
 		return eliminado;
 	}
-	
+	@Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+
+    Lista<?> otraLista = (Lista<?>) obj;
+
+    if (this.indice != otraLista.indice) return false;
+
+    for (int i = 0; i < this.indice; i++) {
+        if (!this.lista[i].equals(otraLista.lista[i])) {
+            return false;
+        }
+    }
+    return true;
+}
 	public String toString(){
 		String s = "";
 		for(int i=0; i<indice; i++)
