@@ -1,4 +1,5 @@
-public class SinglyLinkedLists<E>{
+package lista_enlazada;
+public class SinglyLinkedList<E>{
     private static class Node<E> {
         private E elemento;
         private Node<E> next;
@@ -20,7 +21,7 @@ public class SinglyLinkedLists<E>{
         private int size = 0;           // Cantidad de elementos en la lista
         
         // Constructor
-        public SinglyLinkedLists(){};
+        public SinglyLinkedList(){};
 
         // Acceso a metodos
         /**
@@ -201,7 +202,7 @@ public class SinglyLinkedLists<E>{
          * 
          * @param l Lista cuyos elementos se concatenaran al final de la lista actual
         */
-        public void concatenate (SinglyLinkedLists<E> l) {
+        public void concatenate (SinglyLinkedList<E> l) {
             if (l.isEmpty()) return; // Si la lista es nula o vacia, no hace nada
 
             if(this.isEmpty()){
@@ -216,9 +217,6 @@ public class SinglyLinkedLists<E>{
                 this.size += l.size; // Aumenta el tamaño de la lista actual
             }
         }
-
-
-
 
         /** Busca el elemento 'e' dentro de la lista 
          * Retorna el elemento si se encuentra, o NULL si no esta en la lista 
@@ -247,9 +245,9 @@ public class SinglyLinkedLists<E>{
         /* Verifica si dos listas son iguales */
         public boolean equals (Object o){
             if (this == o) return true; // Si son la misma referencia, son iguales
-            if (!(o instanceof SinglyLinkedLists)) return false; // Si no son del mismo tipo, no son iguales
+            if (!(o instanceof SinglyLinkedList)) return false; // Si no son del mismo tipo, no son iguales
 
-            SinglyLinkedLists<?> other = (SinglyLinkedLists<?>) o; // Convierte el objeto a SinglyLinkedLists
+            SinglyLinkedList<?> other = (SinglyLinkedList<?>) o; // Convierte el objeto a SinglyLinkedLists
             if (this.size != other.size) return false; // Si los tamaños son diferentes, no son iguales
 
             Node<E> currentA = this.head; // Nodo actual de la lista A
@@ -267,8 +265,8 @@ public class SinglyLinkedLists<E>{
 
         @Override
         /* Retorna una copia de una lista dada */
-        public SinglyLinkedLists<E> clone() throws CloneNotSupportedException{
-            SinglyLinkedLists<E> newList = new SinglyLinkedLists<>(); // Crea una nueva lista clonada
+        public SinglyLinkedList<E> clone() throws CloneNotSupportedException{
+            SinglyLinkedList<E> newList = new SinglyLinkedList<>(); // Crea una nueva lista clonada
             Node<E> current = this.head; // Nodo actual para recorrer la lista original
             while (current != null) { // Recorre la lista original
                 newList.addLast(current.getElemento()); // Agrega el elemento al final de la lista clonada
@@ -276,5 +274,20 @@ public class SinglyLinkedLists<E>{
             }
             return newList; // Retorna la lista clonada
         }
-    }
-    
+        
+        @Override
+        public String toString(){
+            StringBuilder sb = new StringBuilder(); // Crea un StringBuilder para construir la cadena
+            Node<E> current = head; // Nodo actual para recorrer la lista
+            sb.append("[");
+            while (current != null) { // Recorre la lista
+                sb.append(current.getElemento()); // Agrega el elemento al StringBuilder
+                current = current.getNext(); // Avanza al siguiente nodo
+                if (current != null) { // Si no es el ultimo nodo, agrega una coma
+                    sb.append(" -> ");
+                }
+            }
+            sb.append("]"); // Cierra la cadena con corchetes
+            return sb.toString(); // Retorna la cadena construida       
+        }    
+}
