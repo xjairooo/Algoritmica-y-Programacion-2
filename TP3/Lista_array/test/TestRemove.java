@@ -1,4 +1,3 @@
-package test;
 
 import lista.Lista;
 
@@ -17,7 +16,7 @@ public class TestRemove {
 
 	// Remover elemento
 	// Antes: { A }
-	// Después: { }
+	// Despuï¿½s: { }
 	public static void testRemove1() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
@@ -34,7 +33,7 @@ public class TestRemove {
 
 	// Remover elemento
 	// Antes: { A, B }
-	// Después: { A }
+	// Despuï¿½s: { A }
 	public static void testRemove2() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
@@ -50,9 +49,9 @@ public class TestRemove {
 		}
 	}
 
-	// Remover lista vacía
+	// Remover lista vacï¿½a
 	// Antes: { }
-	// Después: error
+	// Despuï¿½s: error
 	public static void testRemove3() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
@@ -66,9 +65,9 @@ public class TestRemove {
 		}
 	}
 
-	// Remover índice negativo
+	// Remover ï¿½ndice negativo
 	// Antes: { }
-	// Después: error
+	// Despuï¿½s: error
 	public static void testRemove4() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
@@ -82,9 +81,9 @@ public class TestRemove {
 		}
 	}
 
-	// Remover índice fuera de rango
+	// Remover ï¿½ndice fuera de rango
 	// Antes: { A, B }
-	// Después: error
+	// Despuï¿½s: error
 	public static void testRemove5() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
@@ -102,7 +101,7 @@ public class TestRemove {
 
 	// Remover en el medio
 	// Antes: { A, B, C }
-	// Después: { A, C }
+	// Despuï¿½s: { A, C }
 	public static void testRemove6() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
@@ -119,5 +118,3 @@ public class TestRemove {
 		}
 	}
 }
-
-

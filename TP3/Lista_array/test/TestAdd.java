@@ -1,4 +1,3 @@
-package test;
 
 import lista.Lista;
 
@@ -15,15 +14,15 @@ public class TestAdd {
 		testAdd7();
 	}
 
-	// Insertar lista vacía
+	// Insertar lista vacï¿½a
 	// Antes: { }
-	// Después: { A }
+	// Despuï¿½s: { A }
 	public static void testAdd1() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
 
 			System.out.println("Test 1");
-			lista.add(0, "A");			
+			lista.add(0, "A");
 			System.out.println(lista);
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("error");
@@ -32,28 +31,28 @@ public class TestAdd {
 
 	// Insertar antes
 	// Antes: { A }
-	// Después: { B, A }
+	// Despuï¿½s: { B, A }
 	public static void testAdd2() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
 			lista.add("A");
 
 			System.out.println("Test 2");
-			lista.add(0, "B");			
+			lista.add(0, "B");
 			System.out.println(lista);
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("error");
 		}
 	}
 
-	// Insertar después
+	// Insertar despuï¿½s
 	// Antes: { A }
-	// Después: { A, B }
+	// Despuï¿½s: { A, B }
 	public static void testAdd3() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
 			lista.add("A");
-			
+
 			System.out.println("Test 3");
 			lista.add(1, "B");
 			System.out.println(lista);
@@ -64,7 +63,7 @@ public class TestAdd {
 
 	// Indice negativo
 	// Antes: { }
-	// Después: error
+	// Despuï¿½s: error
 	public static void testAdd4() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
@@ -79,7 +78,7 @@ public class TestAdd {
 
 	// Indice fuera de rango
 	// Antes: { }
-	// Después: error
+	// Despuï¿½s: error
 	public static void testAdd5() {
 		try {
 			Lista<String> lista = new Lista<String>(10);
@@ -94,7 +93,7 @@ public class TestAdd {
 
 	// Lista llena
 	// Antes: { }
-	// Después: error
+	// Despuï¿½s: error
 	public static void testAdd6() {
 		try {
 			Lista<String> lista = new Lista<String>(2);
@@ -111,7 +110,7 @@ public class TestAdd {
 
 	// Indice insertar en el medio
 	// Antes: { }
-	// Después: { C Z B A}
+	// Despuï¿½s: { C Z B A}
 	public static void testAdd7() {
 		try {
 			Lista<String> lista = new Lista<String>(10);

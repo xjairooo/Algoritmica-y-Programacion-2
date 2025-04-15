@@ -1,0 +1,294 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "CalculoEuler",
+            "request": "launch",
+            "mainClass": "CalculoEuler",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "CalculoHipotenusa",
+            "request": "launch",
+            "mainClass": "CalculoHipotenusa",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "CalculoPi",
+            "request": "launch",
+            "mainClass": "CalculoPi",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Circulo",
+            "request": "launch",
+            "mainClass": "Circulo",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Concatenado",
+            "request": "launch",
+            "mainClass": "Concatenado",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "CuadradoCubo",
+            "request": "launch",
+            "mainClass": "CuadradoCubo",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Dados",
+            "request": "launch",
+            "mainClass": "Dados",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "DistanciaEntrePuntos",
+            "request": "launch",
+            "mainClass": "DistanciaEntrePuntos",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "TestAdivinaNumero",
+            "request": "launch",
+            "mainClass": "Ejercicio20.adivinanza.TestAdivinaNumero",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Factorial",
+            "request": "launch",
+            "mainClass": "Factorial",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Histograma",
+            "request": "launch",
+            "mainClass": "Histograma",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "MayorMenor",
+            "request": "launch",
+            "mainClass": "MayorMenor",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "MayorOIgual",
+            "request": "launch",
+            "mainClass": "MayorOIgual",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Multiplo",
+            "request": "launch",
+            "mainClass": "Multiplo",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "NumeroMenor",
+            "request": "launch",
+            "mainClass": "NumeroMenor",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "NumerosDuplicados",
+            "request": "launch",
+            "mainClass": "NumerosDuplicados",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Operaciones",
+            "request": "launch",
+            "mainClass": "Operaciones",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Paridad",
+            "request": "launch",
+            "mainClass": "Paridad",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaLista",
+            "request": "launch",
+            "mainClass": "TP3.lista.src.PruebaLista",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "TestAdd",
+            "request": "launch",
+            "mainClass": "TP3.lista.test.TestAdd",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "TestRemove",
+            "request": "launch",
+            "mainClass": "TP3.lista.test.TestRemove",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "ValorSigno",
+            "request": "launch",
+            "mainClass": "ValorSigno",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "TestComplejo",
+            "request": "launch",
+            "mainClass": "complejo.TestComplejo",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaConjunto",
+            "request": "launch",
+            "mainClass": "conjunto.PruebaConjunto",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "EmployeeTest",
+            "request": "launch",
+            "mainClass": "date.EmployeeTest",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaEmpleados",
+            "request": "launch",
+            "mainClass": "empleados.PruebaEmpleados",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "EmployeeTest(1)",
+            "request": "launch",
+            "mainClass": "employee.EmployeeTest",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaEmpleado",
+            "request": "launch",
+            "mainClass": "empresa.PruebaEmpleado",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaFactura",
+            "request": "launch",
+            "mainClass": "empresa.PruebaFactura",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaPagos",
+            "request": "launch",
+            "mainClass": "empresa.PruebaPagos",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "CompareUsingCompareTo",
+            "request": "launch",
+            "mainClass": "equals.CompareUsingCompareTo",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "CompareUsingEquals",
+            "request": "launch",
+            "mainClass": "equals.CompareUsingEquals",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "CompareUsingEqualsToOperator",
+            "request": "launch",
+            "mainClass": "equals.CompareUsingEqualsToOperator",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaFecha",
+            "request": "launch",
+            "mainClass": "fecha.PruebaFecha",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "TestPortfolio",
+            "request": "launch",
+            "mainClass": "generico.TestPortfolio",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "TestComplejo(1)",
+            "request": "launch",
+            "mainClass": "pracomplejo.complejo.TestComplejo",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaOperacionesRacional",
+            "request": "launch",
+            "mainClass": "racional.PruebaOperacionesRacional",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaRacional",
+            "request": "launch",
+            "mainClass": "racional.PruebaRacional",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "PruebaTiempo",
+            "request": "launch",
+            "mainClass": "tiempo.PruebaTiempo",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        },
+        {
+            "type": "java",
+            "name": "Time2Test",
+            "request": "launch",
+            "mainClass": "time.Time2Test",
+            "projectName": "Algoritmica-y-Programacion-2_705a286b"
+        }
+    ]
+}
