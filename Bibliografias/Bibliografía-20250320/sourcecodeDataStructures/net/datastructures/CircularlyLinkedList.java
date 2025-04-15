@@ -179,4 +179,18 @@ public class CircularlyLinkedList<E> {
     sb.append(")");
     return sb.toString();
   }
+  
+  /* Busca el elemento e dentro de la lista */
+  /* Retorna el elemnto si lo encuentra o Null si no esta en la lista */
+  public E search(E e){
+      Node<E> current = tail;
+      if (isEmpty()) return null;
+      do {
+          current = current.getNext();
+          if (current.getElement().equals(e)) {
+              return current.getElement();
+          }
+      } while (current != tail);
+      return null;
+  }
 }
