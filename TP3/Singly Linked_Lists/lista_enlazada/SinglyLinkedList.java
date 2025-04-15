@@ -14,7 +14,7 @@ public class SinglyLinkedList<E>{
         public void setNext(Node<E> n) {next = n;}
         }
         // -------- Fin nodo --------
-
+        
         // Atributos de la clase SinglyLinkedLists
         private Node<E> head = null;    // Referencia al primer nodo de la lista
         private Node<E> tail = null;    // Referencia al ultimo nodo de la lista
@@ -173,9 +173,8 @@ public class SinglyLinkedList<E>{
             // Verifica si la posicion es valida dentro del rango de la lista
             if (n < 0 || n >= size) throw new IndexOutOfBoundsException("Posicion no valida: " + n);
             
-            if (n == 0) { // Caso especial: eliminar el primer nodo
-                return removeFirst();
-            } 
+            if (n == 0) return removeFirst(); // Caso especial: eliminar el primer nodo
+                
             Node<E> current = head; // Nodo actual para recorrer la lista
             for (int i = 0; i < n - 1; i++) { // Recorre hasta el nodo anterior al que se va a eliminar
                 // Guarda el nodo actual en la variable 'current'
