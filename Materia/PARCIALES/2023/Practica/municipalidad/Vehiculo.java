@@ -89,6 +89,8 @@ public class Vehiculo extends Bien {
         return true;
     }
 
+    // Método para calcular el impuesto
+    // Si el vehículo tiene más de 20 años, se aplica la alícuota correspondiente
     public double calcularImpuesto() {
         int actual = LocalDate.now().getYear();
         if (actual - modelo < ANTIGUEDAD) {

@@ -31,19 +31,19 @@ public class Inmueble extends Bien {
         this.valuacionFiscal = valuacionFiscal;
     }
 
-    public double getAlicuotaBaldio() {
+    public static double getAlicuotaBaldio() {
         return alicuotaBaldio;
     }
 
-    public void setAlicuotaBaldio(double alicuotaBaldio) {
+    public static void setAlicuotaBaldio(double alicuotaBaldio) {
         Inmueble.alicuotaBaldio = alicuotaBaldio;
     }
 
-    public double getAlicuotaEdificado() {
+    public static double getAlicuotaEdificado() {
         return alicuotaEdificado;
     }
 
-    public void setAlicuotaEdificado(double alicuotaEdificado) {
+    public static void setAlicuotaEdificado(double alicuotaEdificado) {
         Inmueble.alicuotaEdificado = alicuotaEdificado;
     }
 
