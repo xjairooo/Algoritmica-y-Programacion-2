@@ -381,4 +381,89 @@ public class SinglyLinkedList<E> implements Cloneable {
         sb.append(")");
         return sb.toString();
     }
+    /**
+  * Elimina todos los elementos que están en una posición impar.
+  * Retorna una lista con los elementos eliminados
+  *
+  * Por ejemplo:
+  *
+  * {A, B, C, D} => {A, C} retorna la lista {B, D}
+  *
+  * {A, B, C} => {A, C} retorna la lista {B}
+  *
+  * {A, B} => {A} retorna la lista {B}
+  *
+  * {A} => {A} retorna la lista {}
+  *
+  * {} => {} retorna la lista {}
+  */
+  public SinglyLinkedList<E> removeOdd(){
+    SinglyLinkedList<E> removedList = new SinglyLinkedList<>(); // Lista para almacenar los elementos eliminados
+    if (isEmpty()) return removedList; // Si la lista está vacia, retorna una lista vacia
+
+    Node<E> current = head; // Nodo actual
+    Node<E> prev = null; // Nodo previo
+    int index = 0; // indice para rastrear la posicion
+
+    // Recorrer la lista hasta el final
+    while (current != null) {
+        if (index % 2 != 0) { 
+            removedList.addLast(current.getElement()); // Agregar el elemento a la lista de eliminados
+            prev.setNext(current.getNext()); // Saltar el nodo actual
+            if (current == tail) { // Si el nodo actual es el tail, actualizar el tail
+                tail = prev;
+            }
+            size--; // Reducir el tamaño de la lista original
+        } else {
+            prev = current; // Actualizar el nodo previo solo si no se elimina
+        }
+        current = current.getNext(); // Avanzar al siguiente nodo
+        index++;
+    }
+    return removedList; // Retornar la lista con los elementos eliminados, osea pares
+  }
+
+  /**
+  * Retorna una nueva lista con los n elementos comenzado desde la derecha
+  *
+  * Por ejemplo:
+  *
+  * Dada la lista {A, B, C, D}
+  *
+  * right(4) retorna la lista {A, B, C, D}
+  *
+  * right(3) retorna la lista {B, C, D}
+  *
+  * right(2) retorna la lista {C, D}
+  *
+  * right(1) retorna la lista {D}
+  *
+  * right(0) retorna la lista {}
+  *
+  * right(5) lanza la excepción IndexOutOfBoundsException
+  *
+  * right(-1) lanza la excepción IndexOutOfBoundsException
+  *
+  *
+  * @param n: número de elementos a retornar comenzando desde la derecha
+  * @return nueva lista con los elementos de la derecha de la lista original
+  * @throws IndexOutOfBoundsException n: supera el tamaño de la lista o es
+  * negativo
+  */
+  public SinglyLinkedList<E> right(int n) throws IndexOutOfBoundsException{
+    if (n < 0 || n > size) throw new IndexOutOfBoundsException("n: " + n + " no es valido");
+    SinglyLinkedList<E> rightList = new SinglyLinkedList<>(); // Lista para almacenar los elementos de la derecha
+    Node<E> current = head; // Nodo actual
+    int index = 0; // Indice para rastrear la posicion
+    
+    // Recorrer la lista hasta el final
+    while (current != null) {
+        if (index >= size - n) { // Si el indice es mayor o igual a size - n, agregar el elemento a la lista de la derecha
+            rightList.addLast(current.getElement());
+        }
+        current = current.getNext(); // Avanzar al siguiente nodo
+        index++;
+    }
+    return rightList; // Retornar la lista con los elementos de la derecha
+  }
 }

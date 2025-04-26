@@ -1,4 +1,4 @@
-package 
+package factorial;
 /**
  * Demonstration of recursive factorial function.
  *
@@ -16,6 +16,15 @@ public class Factorial {
       return 1;                                 // base case
     else
       return n * factorial(n-1);                // recursive case
+  }
+
+  public static int factorialIterative(int n) throws IllegalArgumentException {
+    if (n < 0)
+      throw new IllegalArgumentException();     // argument must be nonnegative
+    int result = 1;
+    for (int i = 1; i <= n; i++)
+      result *= i;
+    return result;
   }
 
   /** Simple test, assuming valid integer given as command-line argument */
