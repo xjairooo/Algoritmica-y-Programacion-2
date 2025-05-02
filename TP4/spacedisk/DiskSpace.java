@@ -4,14 +4,17 @@ import java.util.Scanner;
 import java.io.File;
 
 /**
- * Permite calcular el uso total de espacio en disco, la cantidad de archivos y directorios
+ * Permite calcular el uso total de espacio en disco, la cantidad de archivos y
+ * directorios
  * dentro de un sistema de archivos desde un directorio dado.
  */
 public class DiskSpace {
 
   /**
-   * Calcula el uso total de espacio en disco (en bytes), la cantidad de archivos y directorios
+   * Calcula el uso total de espacio en disco (en bytes), la cantidad de archivos
+   * y directorios
    * de la parte del sistema de archivos que tiene como raíz la ruta dada.
+   * 
    * @param root designa una ubicación en el sistema de archivos
    * @return un arreglo de tres elementos:
    *         [0] = total de bytes utilizados,
@@ -19,7 +22,7 @@ public class DiskSpace {
    *         [2] = cantidad de directorios.
    */
   public static long[] diskUsage(File root) {
-    long[] result = {0, 0, 0}; // [totalBytes, numFiles, numDirectories]
+    long[] result = { 0, 0, 0 }; // [totalBytes, numFiles, numDirectories]
     result[0] += root.length(); // suma el tamaño del archivo o directorio actual
 
     if (root.isDirectory()) { // si es un directorio
@@ -36,12 +39,14 @@ public class DiskSpace {
     }
 
     // Traza del algoritmo
-    System.out.println("Bytes: " + result[0] + ", Archivos: " + result[1] + ", Directorios: " + result[2] + " -> " + root);
+    System.out
+        .println("Bytes: " + result[0] + ", Archivos: " + result[1] + ", Directorios: " + result[2] + " -> " + root);
     return result; // devuelve el resultado acumulado
   }
 
   /**
-   * Calcula el uso de espacio en disco, cantidad de archivos y directorios desde una ruta dada.
+   * Calcula el uso de espacio en disco, cantidad de archivos y directorios desde
+   * una ruta dada.
    * Ejemplo de uso: java DiskSpace C:\Users\campe
    */
   public static void main(String[] args) {
@@ -59,4 +64,5 @@ public class DiskSpace {
     System.out.println("Cantidad de archivos: " + result[1]);
     System.out.println("Cantidad de directorios: " + result[2]);
   }
+
 }
