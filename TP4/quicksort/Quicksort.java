@@ -1,5 +1,7 @@
 package quicksort;
 
+import java.util.Arrays;
+
 public class Quicksort {
         private int[] numbers;
         private int number;
@@ -15,39 +17,37 @@ public class Quicksort {
         }
 
         private void quicksort(int low, int high) {
-                int i = low, j = high;
-                // Get the pivot element from the middle of the list
-                int pivot = numbers[low + (high - low) / 2];
+                System.out.println("Llamada a quicksort(low=" + low + ", high=" + high + ")");
+                System.out.println("Estado actual del arreglo: " + Arrays.toString(numbers));
 
-                // Divide into two lists
+                int i = low, j = high;
+                int pivot = numbers[low + (high - low) / 2];
+                System.out.println("Pivot seleccionado: " + pivot);
+
                 while (i <= j) {
-                        // If the current value from the left list is smaller than the pivot
-                        // element then get the next element from the left list
                         while (numbers[i] < pivot) {
                                 i++;
                         }
-                        // If the current value from the right list is larger than the pivot
-                        // element then get the next element from the right list
                         while (numbers[j] > pivot) {
                                 j--;
                         }
-
-                        // If we have found a value in the left list which is larger than
-                        // the pivot element and if we have found a value in the right list
-                        // which is smaller than the pivot element then we exchange the
-                        // values.
-                        // As we are done we can increase i and j
                         if (i <= j) {
+                                System.out.println("Intercambiando números[" + i + "]=" + numbers[i] + " con números["
+                                                + j + "]=" + numbers[j]);
                                 exchange(i, j);
                                 i++;
                                 j--;
                         }
                 }
-                // Recursion
-                if (low < j)
+
+                System.out.println("Estado del arreglo después de partición: " + Arrays.toString(numbers));
+
+                if (low < j) {
                         quicksort(low, j);
-                if (i < high)
+                }
+                if (i < high) {
                         quicksort(i, high);
+                }
         }
 
         private void exchange(int i, int j) {
