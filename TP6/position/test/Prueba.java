@@ -1,8 +1,8 @@
 package position.test;
 
-import net.datastructures.LinkedPositionalList;
-import net.datastructures.Position;
-import net.datastructures.PositionalList;
+import position.LinkedPositionalList;
+import position.Position;
+import position.PositionalList;
 
 public class Prueba {
     public static void main(String[] args) {

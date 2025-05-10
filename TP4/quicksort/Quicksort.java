@@ -17,12 +17,9 @@ public class Quicksort {
         }
 
         private void quicksort(int low, int high) {
-                System.out.println("Llamada a quicksort(low=" + low + ", high=" + high + ")");
-                System.out.println("Estado actual del arreglo: " + Arrays.toString(numbers));
 
                 int i = low, j = high;
                 int pivot = numbers[low + (high - low) / 2];
-                System.out.println("Pivot seleccionado: " + pivot);
 
                 while (i <= j) {
                         while (numbers[i] < pivot) {
@@ -32,15 +29,11 @@ public class Quicksort {
                                 j--;
                         }
                         if (i <= j) {
-                                System.out.println("Intercambiando números[" + i + "]=" + numbers[i] + " con números["
-                                                + j + "]=" + numbers[j]);
                                 exchange(i, j);
                                 i++;
                                 j--;
                         }
                 }
-
-                System.out.println("Estado del arreglo después de partición: " + Arrays.toString(numbers));
 
                 if (low < j) {
                         quicksort(low, j);
