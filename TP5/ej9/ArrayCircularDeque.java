@@ -2,17 +2,14 @@ package ej9;
 
 public class ArrayCircularDeque<E> implements Deque<E> {
     private E data[];
-    private int size;
-    private int front;
-    private int rear;
+    private int size = 0;
+    private int front = 0;
+    private int rear = 0;
     private int capacity;
 
     @SuppressWarnings("unchecked") // "Silence" the warning
     public ArrayCircularDeque(int capacity) {
         data = (E[]) new Object[capacity];
-        front = 0;
-        rear = 0;
-        size = 0;
         this.capacity = capacity;
     }
 

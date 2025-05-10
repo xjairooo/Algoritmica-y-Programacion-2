@@ -8,6 +8,18 @@ public class ArrayCircularQueue<E> implements CircularQueue<E> {
     private E data[]; // Array to store elements
     private int size = 0; // Number of elements in the queue
     private int front = 0; // Index of the first element
+    private int capacity;
+
+    /**
+     * Constructs an empty queue with the given capacity
+     * 
+     * @param capacity the maximum capacity of the queue
+     */
+    @SuppressWarnings("unchecked")
+    public ArrayCircularQueue(int capacity) {
+        data = (E[]) new Object[capacity];
+        this.capacity = capacity;
+    }
 
     /**
      * Returns the number of elements in the queue.
@@ -36,10 +48,10 @@ public class ArrayCircularQueue<E> implements CircularQueue<E> {
      */
     @Override
     public void enqueue(E e) {
-        if (size == data.length) {
+        if (size == capacity) {
             throw new IllegalStateException("Queue is full");
         }
-        int rear = (front + size) % data.length;
+        int rear = (front + size) % capacity;
         data[rear] = e;
         size++;
     }
@@ -68,7 +80,7 @@ public class ArrayCircularQueue<E> implements CircularQueue<E> {
         }
         E res = data[front];
         data[front] = null;
-        front = (front + 1) % data.length;
+        front = (front + 1) % capacity;
         size--;
         return res;
     }
