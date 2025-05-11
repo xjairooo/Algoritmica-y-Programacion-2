@@ -1,6 +1,4 @@
-package clone.ej3;
-
-import ej1.Stack;
+package ej3;
 
 /**
  * Implementation of the stack ADT using a fixed-length array. All
@@ -12,7 +10,7 @@ import ej1.Stack;
  * @author Roberto Tamassia
  * @author Michael H. Goldwasser
  */
-public class ArrayStack<E> implements Stack<E> {
+public class ArrayStack<E> implements Stack<E>, Cloneable {
   /** Default array capacity. */
   public static final int CAPACITY = 1000; // default array capacity
 
@@ -114,6 +112,18 @@ public class ArrayStack<E> implements Stack<E> {
     return sb.toString();
   }
 
+  @Override
+  @SuppressWarnings("unchecked")
+  public ArrayStack<E> clone() {
+    try {
+      ArrayStack<E> result = (ArrayStack<E>) super.clone();
+      result.data = data.clone();
+      return result;
+    } catch (CloneNotSupportedException e) {
+      throw new AssertionError(e);
+    }
+  }
+
   /** Demonstrates sample usage of a stack. */
   public static void main(String[] args) {
     Stack<Integer> S = new ArrayStack<>(); // contents: ()
@@ -134,5 +144,17 @@ public class ArrayStack<E> implements Stack<E> {
     S.push(6); // contents: (7, 9, 6)
     S.push(8); // contents: (7, 9, 6, 8)
     System.out.println(S.pop()); // contents: (7, 9, 6) outputs 8
+
+    ArrayStack<Integer> original = new ArrayStack<>();
+    original.push(1);
+    original.push(2);
+    original.push(3);
+
+    ArrayStack<Integer> copia = original.clone();
+    copia.pop();
+
+    System.out.println("Original: " + original); // (3, 2, 1)
+    System.out.println("Copia: " + copia); // (2, 1)
+
   }
 }
