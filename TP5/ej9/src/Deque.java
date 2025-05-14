@@ -1,4 +1,4 @@
-package ej9;
+package src;
 
 /**
  * Interface for a double-ended queue: a collection of elements that can be
