@@ -60,16 +60,6 @@ public class TestTree {
         System.out.println("Altura del arbol (height): " + t.height(p));
         System.out.println("Hermano de C (sibling): " + t.sibling(r).getElement());
         System.out.println("Pronfundidad de F (depth): " + t.depth(t.left(r)));
-        /*
-         * breathfirst
-         * preorder
-         * inorder
-         * Posorder
-         * Children
-         * height
-         * sibling
-         * depth
-         */
 
     }
 }
