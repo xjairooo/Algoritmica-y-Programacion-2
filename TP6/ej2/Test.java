@@ -5,7 +5,6 @@ public class Test {
     public static void main(String[] args) {
 
         Stack<Empleado> listaEmpleados = new Stack<>();
-
         // Creo algunos empleados
         Empleado empleado1 = new Empleado();
         empleado1.setNombre("Juan");
