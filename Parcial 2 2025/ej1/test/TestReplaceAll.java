@@ -1,6 +1,6 @@
 package test;
 
-import net.datastructures.LinkedPositionalList;
+import net.datastructures.*;
 
 class TestReplaceAll {
     public static void main(String[] args) {

@@ -480,19 +480,25 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
    * replace(X,Z) > {N, E, U, Q, U, E, N} (retorna 0)
    *
    *
-   * @param i elemento a buscar
-   * @param j elemento de remplazo
-   * @return cantidad de elementos reemplazados
+   * 
    */
   public int replaceAll(E i, E j) {
     int count = 0;
-    for (Position<E> p : positions()) {
-      E elem = p.getElement();
+    Position<E> current = first();
+
+    while (current != null) {
+      E elem = current.getElement();
+      Position<E> next = after(current);
+
       if ((i == null && elem == null) || (i != null && i.equals(elem))) {
-        set(p, j);
+        remove(current); // Elimina el nodo actual
+        addBefore(next, j);
         count++;
       }
+
+      current = next; // Avanza al siguiente nodo
     }
+
     return count;
   }
 }
