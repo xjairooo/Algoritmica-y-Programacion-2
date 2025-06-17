@@ -135,19 +135,32 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E>
    *
    */
   public boolean repeatedExternalElement() {
-    if (isEmpty())
-      return false;
+    Map<E, Boolean> externalElements = new ChainHashMap<>();
 
-    List<E> externalValues = new ArrayList<>();
-    for (Position<E> p : positions()) {
+    if (isEmpty()) {
+      return false;
+    }
+
+    Queue<Position<E>> queue = new ArrayQueue<>();
+    queue.enqueue(root());
+
+    while (!queue.isEmpty()) {
+      Position<E> p = queue.dequeue();
+      E element = p.getElement();
+
       if (isExternal(p)) {
-        E value = p.getElement();
-        if (externalValues.contains(value)) {
+        if (externalElements.get(element) != null) {
           return true;
         }
-        externalValues.add(value);
+
+        externalElements.put(element, true);
+      } else {
+        for (Position<E> child : children(p)) {
+          queue.enqueue(child);
+        }
       }
     }
+
     return false;
   }
 }

@@ -3,7 +3,7 @@ package test;
 import net.datastructures.LinkedBinaryTree;
 import net.datastructures.Position;
 
-public class TestRepeatedExternalElement {
+public class TestRepeatedExternalElementNormal {
     public static void main(String[] args) {
 
         LinkedBinaryTree<String> tree1 = new LinkedBinaryTree<>();
